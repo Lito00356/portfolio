@@ -1,0 +1,62 @@
+:root {
+  /* text color: */
+  --text-black: rgba(17, 18, 18, 1);
+  --text-muted: rgb(101, 105, 105);
+  --text-white: rgb(245, 245, 245);
+  --text-hover-accent-light: rgb(198, 212, 210);
+  --text-hover-accent-contrast: rgb(238, 238, 238);
+  --text-hover-accent-muted: rgb(163, 175, 173);
+  --text-hover-accent-dark: rgba(216, 230, 227, 0.171);
+
+  /* text sizes: */
+  --text-size-xs: 0.6875rem;
+  --text-size-sm: 0.875rem;
+  --text-size-base: 1rem;
+  --text-size-lg: 1.125rem;
+  --text-size-xl: 1.25rem;
+  --text-size-2xl: 1.875rem;
+  --text-size-3xl: 2.25rem;
+  --text-size-4xl: 3rem;
+
+  /* spacing: */
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-lg: 1.25rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2rem;
+  --spacing-3xl: 3rem;
+  --spacing-4xl: 4rem;
+  --spacing-5xl: 5rem;
+  --spacing-6xl: 6rem;
+  --spacing-8xl: 8rem;
+
+  /* border radius: */
+  --radius-2xs: 0.25rem;
+  --radius-xs: 0.5rem;
+  --radius-sm: 0.75rem;
+  --radius-base: 1rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2rem;
+
+  /* layout: */
+  --page-gutter: clamp(1.5rem, 7.5vw, 8rem);
+
+  /* colors: */
+  --accent: rgba(183, 195, 193, 1);
+  --accent-muted: rgba(183, 195, 193, 0.3);
+  --accent-light: rgba(220, 230, 229, 1);
+  --background: rgba(245, 245, 245, 1);
+  --dark: rgba(17, 18, 18, 1);
+  --shadow: rgba(183, 195, 193, 0.15);
+
+  --main-color: var(--accent);
+  --main-bg: var(--background);
+  --main-dark: var(--dark);
+  --main-shadow: var(--shadow);
+  --main-color-muted: var(--accent-muted);
+  --main-color-light: var(--accent-light);
+}
