@@ -9,7 +9,8 @@
       "@functional/*": ["./src/app/components/functional/*"],
       "@pages/*": ["./src/app/pages/*"],
       "@style/*": ["./src/style/*"],
-      "@core/*": ["./src/core/*"]
+      "@core/*": ["./src/core/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   }
 }

@@ -22,6 +22,7 @@ export default defineConfig({
       "@pages": resolve(__dirname, "./src/app/pages"),
       "@style": resolve(__dirname, "./src/style"),
       "@core": resolve(__dirname, "./src/core"),
+      "@lib": resolve(__dirname, "./src/lib"),
     },
   },
 });
