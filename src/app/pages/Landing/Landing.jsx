@@ -1,27 +1,22 @@
 import { Canvas } from "@react-three/fiber";
 import "./Landing.css";
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { MODELS } from "@lib/paths";
+import { OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
-
-function Model() {
-  const { scene } = useGLTF(MODELS.player);
-  return (
-    <>
-      <primitive object={scene} />;
-      <meshBasicMaterial color="yellow" />
-    </>
-  );
-}
+import Player from "@functional/Player/Player";
 
 const Landing = () => {
   return (
     <>
-      <Canvas camera={{ position: [10, 6, 10], fov: 50 }}>
+      <Canvas camera={{ position: [20, 15, 20], fov: 50 }}>
         <OrbitControls />
-        <ambientLight intensity={1} color={"#e8f0ff"} />
+        {/* <ambientLight intensity={0.5} color={"#e8f0ff"} /> */}
+        {/* <directionalLight position={[3, 3, 3]} intensity={0.5} /> */}
         <Suspense fallback={null}>
-          <Model />
+          <mesh rotation={[Math.PI / 2, Math.PI / 1, 0]} scale={[25, 25, 25]}>
+            <planeGeometry />
+            <meshBasicMaterial color="red" />
+          </mesh>
+          <Player />
         </Suspense>
       </Canvas>
     </>
