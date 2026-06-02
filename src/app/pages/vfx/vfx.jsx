@@ -101,7 +101,7 @@ export const Vfx = () => {
   return (
     <>
       <header className="container-80 title-wrapper">
-        <h1 className="title title--center title--projects">My Projects</h1>
+        <h1 className="title title--center title--projects">Vfx</h1>
         <small className="title__subtitle">Across the years</small>
       </header>
 

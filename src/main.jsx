@@ -9,6 +9,7 @@ import Vfx from "@pages/vfx/vfx.jsx";
 import Coding from "@pages/coding/coding.jsx";
 import About from "@pages/about/about.jsx";
 import Contact from "@pages/contact/contact.jsx";
+import Navlayout from "@functional/Layout/Navlayout";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -16,10 +17,12 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Landing />} />
-          <Route path="/vfx" element={<Vfx />} />
-          <Route path="/coding" element={<Coding />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route element={<Navlayout />}>
+            <Route path="/vfx" element={<Vfx />} />
+            <Route path="/coding" element={<Coding />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

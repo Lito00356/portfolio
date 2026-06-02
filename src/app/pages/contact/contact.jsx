@@ -1,7 +1,14 @@
-import React from "react";
-
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <>
+      <section className="main-container">
+        <div className="card">
+          <div>Foto of Quote</div>
+          <div>Naam en mail</div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Contact;

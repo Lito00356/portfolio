@@ -14,7 +14,7 @@ const BUTTON_CONFIG = {
 };
 
 const BUTTON_NAMES = Object.keys(BUTTON_CONFIG);
-const DEFAULT_COLOR = "yellow";
+const DEFAULT_COLOR = "#FAFAD2";
 
 function Player({ scale, position }) {
   const { scene, animations } = useGLTF(MODELS.player);

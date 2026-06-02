@@ -9,9 +9,9 @@ const Landing = () => {
     <>
       <div className="canvas">
         <Canvas shadows>
-          <spotLight position={[-5, 15, -28]} intensity={30} penumbra={25} distance={100} castShadow />
-          <spotLight position={[5, 15, 0]} intensity={45} penumbra={25} distance={100} castShadow />
-          <spotLight position={[15, 3, 0]} intensity={3} penumbra={1} />
+          <spotLight position={[-3, 14, -28]} intensity={100} penumbra={1} distance={100} castShadow />
+          <spotLight position={[5, 15, 0]} intensity={75} penumbra={1} distance={100} castShadow />
+          <spotLight position={[15, 3, 0]} intensity={8} penumbra={1} />
           <Suspense fallback={null}>
             <mesh rotation={[Math.PI / 2, Math.PI / 1, 0]} scale={[80, 125, 1]} position={[-15, 0, -20]} receiveShadow>
               <planeGeometry />
