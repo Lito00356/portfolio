@@ -8,12 +8,13 @@ const Landing = () => {
   return (
     <>
       <Canvas shadows>
-        <ambientLight intensity={0.5} color={"#e8f0ff"} />
-        <directionalLight position={[-3, 3, 0]} intensity={2} castShadow />
+        <spotLight position={[-5, 15, -28]} intensity={30} penumbra={25} distance={100} castShadow />
+        <spotLight position={[5, 15, 0]} intensity={45} penumbra={25} distance={100} castShadow />
+        <spotLight position={[15, 3, 0]} intensity={3} penumbra={1} />
         <Suspense fallback={null}>
-          <mesh rotation={[Math.PI / 2, Math.PI / 1, 0]} scale={[25, 25, 25]} receiveShadow>
+          <mesh rotation={[Math.PI / 2, Math.PI / 1, 0]} scale={[80, 125, 1]} position={[-15, 0, -20]} receiveShadow>
             <planeGeometry />
-            <meshStandardMaterial color="red" />
+            <shadowMaterial transparent opacity={0.4} />
           </mesh>
           <Player />
         </Suspense>
