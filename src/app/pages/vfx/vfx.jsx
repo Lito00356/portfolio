@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./vfx.css";
 
 const MovieIcon = () => (
   <svg className="grid__icon" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -27,7 +28,7 @@ const projects = [
     title: "John Wick 4",
     type: "Movie",
     description: "Action movie about John Wick",
-    image: "https://placehold.co/400x700",
+    image: "/images/webp/john_wick4.webp",
     alt: "John Wick 4 movieposter",
   },
   {
@@ -35,7 +36,7 @@ const projects = [
     title: "Heart Of Stone",
     type: "Movie",
     description: "Action movie about a spy",
-    image: "https://placehold.co/400x700",
+    image: "/images/webp/heart_of_stone.webp",
     alt: "Heart of Stone movieposter",
   },
   {
@@ -43,7 +44,7 @@ const projects = [
     title: "Freaks Out",
     type: "Movie",
     description: "Science-fiction and superpowers in WWII",
-    image: "https://placehold.co/400x700",
+    image: "/images/webp/freaks_out.webp",
     alt: "Freaks Out movieposter",
   },
   {
@@ -51,7 +52,7 @@ const projects = [
     title: "Vesper",
     type: "Movie",
     description: "A lost world where food is scarce! Thrilling sci-fi and great visuals",
-    image: "https://placehold.co/400x700",
+    image: "/images/webp/vesper.webp",
     alt: "Vesper movieposter",
   },
   {
@@ -59,7 +60,7 @@ const projects = [
     title: "The Witcher Season 4",
     type: "Series",
     description: "Series about Geralt Of Rivia trying to find his ward from the law of surprise",
-    image: "https://placehold.co/400x700",
+    image: "/images/webp/the_witcher.webp",
     alt: "The Witcher season 4 series poster",
   },
   {
@@ -67,7 +68,7 @@ const projects = [
     title: "Le Jardinier",
     type: "Movie",
     description: "Muscles from Brussels are back! Comedy packed with humor and nostalgie",
-    image: "https://placehold.co/400x700",
+    image: "/images/webp/le_jardinier.webp",
     alt: "Le Jardinier movieposter",
   },
 ];
@@ -85,33 +86,12 @@ const typeMatchesFilter = (type, filter) => {
   return false;
 };
 
-// Active filter style — mirrors the look of your existing button/filter styles
-// using your own CSS variables so it blends seamlessly.
 const activeStyle = {
   textDecoration: "underline",
-  textDecorationColor: "var(--main-faded)",
+  textDecorationColor: "var(--main-color-muted)",
   textUnderlineOffset: "4px",
   fontWeight: "700",
 };
-
-const gridFix = `
-  .grid__item--projects {
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .grid__item-description {
-    position: absolute;
-    inset: 0;
-  }
-
-  .grid__icon {
-    width: 25px;
-    height: 25px;
-    flex-shrink: 0;
-  }
-`;
 
 export const Vfx = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -120,7 +100,6 @@ export const Vfx = () => {
 
   return (
     <>
-      <style>{gridFix}</style>
       <header className="container-80 title-wrapper">
         <h1 className="title title--center title--projects">My Projects</h1>
         <small className="title__subtitle">Across the years</small>
