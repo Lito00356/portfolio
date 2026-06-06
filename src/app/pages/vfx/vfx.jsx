@@ -101,7 +101,7 @@ export const Vfx = () => {
   return (
     <>
       <header className="container-80 title-wrapper">
-        <h1 className="title title--center title--projects">Vfx</h1>
+        <h1 className="title title--center title--projects">VFX_Projects</h1>
         <small className="title__subtitle">Across the years</small>
       </header>
 
@@ -122,7 +122,7 @@ export const Vfx = () => {
         </ul>
       </nav>
 
-      <section className="grid grid--projects">
+      <section className="grid--projects">
         {filtered.map((project) => (
           <article key={project.id} className="grid__item grid__item--projects">
             <picture className="grid__media">

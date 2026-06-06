@@ -1,4 +1,155 @@
-.nav {
-//   height: 2rem;
-  background-color: red;
+.layout {
+  min-height: 100dvh;
+}
+
+.open {
+  overflow: hidden;
+}
+
+/* ── Navbar ───────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  width: 80%;
+  margin: 0 auto;
+  container-type: inline-size;
+  container-name: inline-menu;
+}
+
+/* ── Logo ─────────────────────────────────────────────── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.navbar__logo-letter {
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  padding: 0.25rem 0.55rem;
+}
+
+/* ── List wrapper ─────────────────────────────────────── */
+.navbar__list-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-base);
+}
+
+/* ── Nav list ─────────────────────────────────────────── */
+.navbar__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 1rem 3rem;
+  gap: var(--spacing-2xl);
+  font-size: 2rem;
+
+  /* mobile: fixed overlay, off-screen to the right */
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 20;
+  background-color: var(--accent-secondary);
+  transform: translateX(100%);
+
+  @container inline-menu (min-width: 42rem) {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+    gap: var(--spacing-3xl);
+    background-color: transparent;
+    height: auto;
+    padding: 0;
+    transform: translateX(0);
+    transition: none;
+  }
+}
+
+.open .navbar__list {
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+}
+
+/* ── Nav items ────────────────────────────────────────── */
+.navbar__list-item {
+  position: relative;
+}
+
+.navbar__list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background-color: var(--color-white);
+  transition: width 0.25s ease;
+}
+
+.navbar__list-item:hover::before {
+  width: 100%;
+}
+
+.navbar__list-item:has(.navbar__list-link--active):hover::before {
+  width: 0;
+}
+
+.navbar__list-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.navbar__list-link--active {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
+/* ── Hamburger ────────────────────────────────────────── */
+.navbar__hamburger {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  fill: var(--color-white);
+  width: 2rem;
+
+  @container inline-menu (min-width: 42rem) {
+    display: none;
+  }
+}
+
+.open .navbar__hamburger {
+  display: none;
+}
+
+/* ── Close button ─────────────────────────────────────── */
+.btn-close {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 21;
+}
+
+.open .btn-close {
+  display: flex;
+
+  @container inline-menu (min-width: 42rem) {
+    display: none;
+  }
 }

@@ -46,17 +46,27 @@
   --page-gutter: clamp(1.5rem, 7.5vw, 8rem);
 
   /* colors: */
-  --accent: rgba(183, 195, 193, 1);
-  --accent-muted: rgba(183, 195, 193, 0.3);
-  --accent-light: rgba(220, 230, 229, 1);
-  --background: rgba(245, 245, 245, 1);
-  --dark: rgba(17, 18, 18, 1);
-  --shadow: rgba(183, 195, 193, 0.15);
+  --color-black: #090109;
+  --color-white: #edfafe;
+
+  --accent: hsl(302, 89%, 44%);
+  --accent-muted: hsla(302, 76%, 48%, 0.493);
+  --accent-light: hsl(302, 76%, 65%);
+
+  --accent-secondary: hsl(101, 94%, 25%);
+  --accent-secondary-muted: hsla(101, 81%, 31%, 0.493);
+  --accent-secondary-light: hsl(101, 81%, 45%);
+
+  --background: var(--color-black);
+  --dark: var(--color-black);
+  --shadow: var(--accent-muted);
 
   --main-color: var(--accent);
+  --main-color-secondary: var(--accent-secondary);
   --main-bg: var(--background);
   --main-dark: var(--dark);
   --main-shadow: var(--shadow);
   --main-color-muted: var(--accent-muted);
   --main-color-light: var(--accent-light);
+  --main-color-secondary-muted: var(--accent-secondary-muted);
 }
