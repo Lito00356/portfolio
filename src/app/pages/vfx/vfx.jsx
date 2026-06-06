@@ -67,7 +67,7 @@ const projects = [
     id: 6,
     title: "Le Jardinier",
     type: "Movie",
-    description: "Muscles from Brussels are back! Comedy packed with humor and nostalgie",
+    description: "Muscles from Brussels are back! Comedy packed with humor and nostalgia",
     image: "/images/webp/le_jardinier.webp",
     alt: "Le Jardinier movieposter",
   },
