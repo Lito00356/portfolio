@@ -4,7 +4,12 @@ const Contact = () => {
       <section className="main-container">
         <div className="card">
           <div>Foto of Quote</div>
-          <div>Naam en mail</div>
+          <div>
+            <ul>
+              <li>Tomasz Liksza</li>
+              <li>Contact</li>
+            </ul>
+          </div>
         </div>
       </section>
     </>

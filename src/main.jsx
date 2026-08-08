@@ -6,7 +6,7 @@ import "./style/index.css";
 import "./style/pages.css";
 import App from "./App.jsx";
 import { BrowserRouter, Route, Routes } from "react-router";
-import Landing from "@pages/Landing/Landing.jsx";
+import Landing from "@pages/landing/landing.jsx";
 import Vfx from "@pages/vfx/vfx.jsx";
 import Coding from "@pages/coding/coding.jsx";
 import About from "@pages/about/about.jsx";
