@@ -3,7 +3,7 @@
   width: 100%;
   height: 100dvh;
   perspective: 1250rem;
-  background-color: whitesmoke;
+  background-color: rgb(82, 80, 80);
   overflow: hidden;
 }
 
@@ -14,9 +14,10 @@
   transform-style: preserve-3d;
 }
 
+/* carousel orbit sits at 70% from top (30% from bottom) */
 .orbit {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 6.25rem;
@@ -39,6 +40,7 @@
   display: block;
 }
 
+/* preview sits above the carousel, hidden until idle */
 .preview {
   position: absolute;
   top: 30%;
@@ -47,6 +49,8 @@
   width: 15.625rem;
   height: 20.3125rem;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .preview img {
@@ -56,16 +60,57 @@
   display: block;
 }
 
-.title {
+/* ── Arrow buttons ────────────────────────────────────── */
+.carousel-btn {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: white;
+}
+
+.carousel-btn--left {
+  left: 5%;
+}
+
+.carousel-btn--right {
+  right: 5%;
+}
+
+.carousel-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ── Title tag ────────────────────────────────────────── */
+.titleTag {
   position: fixed;
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-size: 0.7rem;
   text-transform: uppercase;
   background-color: #000;
   color: #fff;
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
+  z-index: 10;
 }
