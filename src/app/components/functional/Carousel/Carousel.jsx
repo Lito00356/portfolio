@@ -36,6 +36,7 @@ const Carousel = ({ activeIndex }) => {
         key={page.key}
         position={[x, 0, z]}
         rotation={[0, angle, 0]}
+        floatOffset={index * 0.7}
         texturePath={STICKERS[page.key]}
         onSelect={() => navigate(page.route)}
       />
