@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
+import { SpotLight } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Carousel from "@functional/Carousel/Carousel";
 import Screen from "@functional/Screen/Screen";
@@ -13,6 +13,7 @@ const PAGES = [
 ];
 
 const SETTLE_DELAY = 1000;
+const RADIUS = 1;
 
 const Landing = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,10 +41,10 @@ const Landing = () => {
     <>
       <Canvas className="carousel-canvas">
         <Camera />
-        {/* <ambientLight intensity={0.5} /> */}
-
+        {/* <SpotLight radius={RADIUS} /> */}
+        <spotLight intensity={1} />
         <Suspense fallback={null}>
-          <Carousel pages={PAGES} activeIndex={activeIndex} activePageIndex={wrappedIndex} />
+          <Carousel pages={PAGES} activeIndex={activeIndex} activePageIndex={wrappedIndex} radius={RADIUS} />
           <Screen activeVideoKey={activeVideoKey} />
         </Suspense>
       </Canvas>

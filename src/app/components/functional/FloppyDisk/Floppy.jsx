@@ -9,6 +9,7 @@ const HOVER_SCALE = 0.52;
 const FLOAT_AMPLITUDE = 0.02;
 const TILT_AMPLITUDE = 0.02;
 const PAN_AMPLITUDE = 0.08;
+const ENV_MAP_INTENSITY = 0.5;
 
 export const Floppy = ({ texturePath, onSelect, position, rotation, isActive, floatOffset = 0, ...props }) => {
   const { scene } = useGLTF(MODELS.floppy);
@@ -53,6 +54,7 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, isActive, fl
     clonedScene.traverse((child) => {
       if (child.isMesh) {
         child.material.envMap = isActive ? environmentTexture : null;
+        child.material.envMapIntensity = isActive ? ENV_MAP_INTENSITY : 0;
         child.material.needsUpdate = true;
       }
     });

@@ -4,10 +4,9 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { useNavigate } from "react-router";
 
-const RADIUS = 1;
 const SMOOTHING = 0.08;
 
-const Carousel = ({ pages, activeIndex, activePageIndex }) => {
+const Carousel = ({ pages, activeIndex, activePageIndex, radius }) => {
   const groupRef = useRef(null);
   const navigate = useNavigate();
   const angleStep = (2 * Math.PI) / pages.length;
@@ -21,8 +20,8 @@ const Carousel = ({ pages, activeIndex, activePageIndex }) => {
 
   const floppyDisks = pages.map((page, index) => {
     const angle = index * ((2 * Math.PI) / pages.length);
-    const x = Math.sin(angle) * RADIUS;
-    const z = Math.cos(angle) * RADIUS;
+    const x = Math.sin(angle) * radius;
+    const z = Math.cos(angle) * radius;
 
     return (
       <Floppy
