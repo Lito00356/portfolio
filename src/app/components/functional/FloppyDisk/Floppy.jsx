@@ -10,7 +10,7 @@ const FLOAT_AMPLITUDE = 0.02;
 const TILT_AMPLITUDE = 0.02;
 const PAN_AMPLITUDE = 0.08;
 
-export const Floppy = ({ texturePath, onSelect, position, rotation, floatOffset = 0, ...props }) => {
+export const Floppy = ({ texturePath, onSelect, onHover, position, rotation, floatOffset = 0, ...props }) => {
   const { scene } = useGLTF(MODELS.floppy);
   const [hovered, setHovered] = useState(false);
   const ref = useRef();
@@ -63,11 +63,13 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, floatOffset 
         e.stopPropagation();
         setHovered(true);
         document.body.style.cursor = "pointer";
+        onHover?.(true);
       }}
       onPointerOut={(e) => {
         e.stopPropagation();
         setHovered(false);
         document.body.style.cursor = "auto";
+        onHover?.(false);
       }}
       {...props}
     />

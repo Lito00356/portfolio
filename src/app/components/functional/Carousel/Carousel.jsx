@@ -4,20 +4,13 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { useNavigate } from "react-router";
 
-const PAGES = [
-  { title: "Vfx", key: "vfx", route: "/vfx" },
-  { title: "Coding", key: "coding", route: "/coding" },
-  { title: "About", key: "about", route: "/about" },
-  { title: "Contact", key: "contact", route: "/contact" },
-];
-
 const RADIUS = 1;
 const SMOOTHING = 0.08;
 
-const Carousel = ({ activeIndex }) => {
+const Carousel = ({ pages, activeIndex, onHoveredPageChange }) => {
   const groupRef = useRef(null);
   const navigate = useNavigate();
-  const angleStep = (2 * Math.PI) / PAGES.length;
+  const angleStep = (2 * Math.PI) / pages.length;
   const targetRotation = -activeIndex * angleStep;
 
   useFrame(() => {
@@ -26,8 +19,8 @@ const Carousel = ({ activeIndex }) => {
     groupRef.current.rotation.y = current + (targetRotation - current) * SMOOTHING;
   });
 
-  const floppyDisks = PAGES.map((page, index) => {
-    const angle = index * ((2 * Math.PI) / PAGES.length);
+  const floppyDisks = pages.map((page, index) => {
+    const angle = index * ((2 * Math.PI) / pages.length);
     const x = Math.sin(angle) * RADIUS;
     const z = Math.cos(angle) * RADIUS;
 
@@ -38,6 +31,7 @@ const Carousel = ({ activeIndex }) => {
         rotation={[0, angle, 0]}
         floatOffset={index * 0.7}
         texturePath={STICKERS[page.key]}
+        onHoverChange={(isHovering) => onHoveredPageChange?.(isHovering ? page.key : null)}
         onSelect={() => navigate(page.route)}
       />
     );

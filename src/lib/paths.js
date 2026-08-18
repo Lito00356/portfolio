@@ -11,3 +11,10 @@ export const STICKERS = {
   about: "/models/floppy/about-sticker.png",
   contact: "/models/floppy/contact-sticker.png",
 };
+
+export const VIDEOS = {
+  vfx: "/videos/bg_video_abstract.webm",
+  coding: "/videos/bg_video_abstract.webm",
+  about: "/videos/bg_video_abstract.webm",
+  contact: "/videos/bg_video_abstract.webm",
+};
