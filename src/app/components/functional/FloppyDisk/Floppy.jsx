@@ -5,7 +5,7 @@ import { SRGBColorSpace } from "three";
 
 const floppyScale = 1;
 
-export const Floppy = ({ texturePath, ...props }) => {
+export const Floppy = ({ texturePath, onSelect, ...props }) => {
   const { scene } = useGLTF(MODELS.floppy);
   const stickerTexture = useTexture(texturePath, (texture) => {
     texture.flipY = false;
@@ -32,7 +32,17 @@ export const Floppy = ({ texturePath, ...props }) => {
     });
   }, [clonedScene, stickerTexture]);
 
-  return <primitive object={clonedScene} scale={floppyScale} {...props} />;
+  return (
+    <primitive
+      object={clonedScene}
+      scale={floppyScale}
+      onClick={(e) => {
+        e.stopPropagation();
+        onSelect?.();
+      }}
+      {...props}
+    />
+  );
 };
 
 export default Floppy;
