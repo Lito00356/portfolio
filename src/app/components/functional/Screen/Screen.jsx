@@ -1,15 +1,17 @@
 import { VIDEOS } from "@lib/paths";
 import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 const FADE_DURARTION = 300;
+const REFLECTION_OPACITY = 0.25;
 
 const Screen = ({ activeVideoKey }) => {
   const videoRef = useRef(null);
   const materialRef = useRef(null);
   const targetColor = useRef(new THREE.Color(0, 0, 0));
   const fadeTimerRef = useRef();
+  const reflectionMaterialRef = useRef();
   const [videoTexture, setVideoTexture] = useState(null);
 
   useEffect(() => {
@@ -50,11 +52,40 @@ const Screen = ({ activeVideoKey }) => {
     materialRef.current.color.lerp(targetColor.current, 0.1);
   });
 
+  const reflectionTexture = useMemo(() => {
+    if (!videoTexture) return null;
+
+    const videoClone = videoTexture.clone();
+    videoClone.repeat.y = -1;
+    videoClone.offset.y = 1;
+
+    return videoClone;
+  }, [videoTexture]);
+
+  useFrame(() => {
+    if (materialRef.current) materialRef.current.color.lerp(targetColor.current, 0.1);
+    if (reflectionMaterialRef.current) reflectionMaterialRef.current.color.lerp(targetColor.current, 0.1);
+  });
+
   return (
-    <mesh position={[0, 1, -3]}>
-      <planeGeometry args={[3, 2]} />
-      <meshBasicMaterial ref={materialRef} color={[0, 0, 0]} map={videoTexture} toneMapped={false} />
-    </mesh>
+    <group>
+      <mesh position={[0, 1, -3]}>
+        <planeGeometry args={[3, 2]} />
+        <meshBasicMaterial ref={materialRef} color={[0, 0, 0]} map={videoTexture} toneMapped={false} />
+      </mesh>
+
+      <mesh position={[0, 0, -2]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[3, 2]} />
+        <meshBasicMaterial
+          ref={reflectionMaterialRef}
+          map={reflectionTexture}
+          color={[0, 0, 0]}
+          transparent
+          opacity={REFLECTION_OPACITY}
+          toneMapped={false}
+        />
+      </mesh>
+    </group>
   );
 };
 
