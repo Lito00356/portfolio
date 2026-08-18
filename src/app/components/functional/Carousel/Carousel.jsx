@@ -27,7 +27,7 @@ const Carousel = ({ pages, activeIndex }) => {
     return (
       <Floppy
         key={page.key}
-        position={[x, 0, z]}
+        position={[x, 0.2, z]}
         rotation={[0, angle, 0]}
         floatOffset={index * 0.7}
         texturePath={STICKERS[page.key]}

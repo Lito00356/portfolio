@@ -5,6 +5,7 @@ import * as THREE from "three";
 
 const FADE_DURARTION = 300;
 const REFLECTION_OPACITY = 0.25;
+const SCREEN_SIZE = [6, 3.5];
 
 const Screen = ({ activeVideoKey }) => {
   const videoRef = useRef(null);
@@ -70,12 +71,12 @@ const Screen = ({ activeVideoKey }) => {
   return (
     <group>
       <mesh position={[0, 1, -3]}>
-        <planeGeometry args={[3, 2]} />
+        <planeGeometry args={SCREEN_SIZE} />
         <meshBasicMaterial ref={materialRef} color={[0, 0, 0]} map={videoTexture} toneMapped={false} />
       </mesh>
 
       <mesh position={[0, 0, -2]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[3, 2]} />
+        <planeGeometry args={SCREEN_SIZE} />
         <meshBasicMaterial
           ref={reflectionMaterialRef}
           map={reflectionTexture}
