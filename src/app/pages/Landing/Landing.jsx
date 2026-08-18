@@ -11,7 +11,7 @@ const PAGES = [
   { title: "Contact", key: "contact", route: "/contact" },
 ];
 
-const SETTLE_DELAY = 1500;
+const SETTLE_DELAY = 1000;
 
 const Landing = () => {
   const [activeIndex, setActiveIndex] = useState(0);

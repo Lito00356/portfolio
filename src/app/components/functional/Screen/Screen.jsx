@@ -41,6 +41,8 @@ const Screen = ({ activeVideoKey }) => {
         videoRef.current.pause();
       }
     }, FADE_DURARTION);
+
+    return () => clearTimeout(fadeTimerRef.current);
   }, [activeVideoKey]);
 
   useFrame(() => {
@@ -51,7 +53,7 @@ const Screen = ({ activeVideoKey }) => {
   return (
     <mesh position={[0, 1, -3]}>
       <planeGeometry args={[3, 2]} />
-      <meshBasicMaterial ref={materialRef} map={videoTexture} toneMapped={false} />
+      <meshBasicMaterial ref={materialRef} color={[0, 0, 0]} map={videoTexture} toneMapped={false} />
     </mesh>
   );
 };
