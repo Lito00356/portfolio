@@ -1,89 +1,79 @@
-.slider {
-  position: fixed;
-  width: 100%;
-  height: 100dvh;
-  background-color: rgb(82, 80, 80);
-  overflow: hidden;
-}
-
 .carousel-canvas {
   position: absolute;
   inset: 0;
 }
 
-/* preview sits above the carousel, hidden until idle */
-.preview {
+.ps1-btn {
   position: absolute;
-  top: 22%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 15.625rem;
-  height: 20.3125rem;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ── Arrow buttons ────────────────────────────────────── */
-.carousel-btn {
-  position: absolute;
-  top: 72%;
+  top: 78%;
   transform: translateY(-50%);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: white;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-black);
+  border: 2px solid var(--color-white);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 0 var(--accent);
   cursor: pointer;
   z-index: 10;
   transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.08s ease,
+    box-shadow 0.08s ease;
 }
 
-.carousel-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: white;
+.ps1-btn:hover {
+  box-shadow: 4px 4px 0 0 var(--accent-light);
 }
 
-.carousel-btn--left {
+.ps1-btn:hover .ps1-arrow {
+  background-color: var(--accent-light);
+}
+
+.ps1-btn:active {
+  transform: translateY(-50%) translate(4px, 4px);
+  box-shadow: 0 0 0 0 var(--accent);
+}
+
+.ps1-btn:focus-visible {
+  outline: 2px dashed var(--accent-light);
+  outline-offset: 3px;
+}
+
+.ps1-btn--left {
   left: 5%;
 }
 
-.carousel-btn--right {
+.ps1-btn--right {
   right: 5%;
 }
 
-.carousel-btn svg {
+.ps1-arrow {
   width: 1.5rem;
   height: 1.5rem;
+  background-color: var(--color-white);
+  transition: background-color 0.08s ease;
+  clip-path: polygon(
+    100% 0%,
+    87.5% 0%,
+    87.5% 12.5%,
+    75% 12.5%,
+    75% 25%,
+    62.5% 25%,
+    62.5% 37.5%,
+    50% 37.5%,
+    50% 62.5%,
+    62.5% 62.5%,
+    62.5% 75%,
+    75% 75%,
+    75% 87.5%,
+    87.5% 87.5%,
+    87.5% 100%,
+    100% 100%
+  );
 }
 
-/* ── Title tag ────────────────────────────────────────── */
-.titleTag {
-  position: fixed;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Arial", sans-serif;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  background-color: #000;
-  color: #fff;
-  padding: 0.2rem 0.4rem;
-  border-radius: 3px;
-  z-index: 10;
+.ps1-arrow--right {
+  transform: scaleX(-1);
 }

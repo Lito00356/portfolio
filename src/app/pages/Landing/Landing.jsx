@@ -3,6 +3,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import Carousel from "@functional/Carousel/Carousel";
 import Screen from "@functional/Screen/Screen";
 import Camera from "@functional/Camera/Camera";
+import "./Landing.css";
 
 const PAGES = [
   { title: "Vfx", key: "vfx", route: "/vfx" },
@@ -48,8 +49,12 @@ const Landing = () => {
         </Suspense>
       </Canvas>
 
-      <button onClick={goBack}>Prev</button>
-      <button onClick={goNext}>Next</button>
+      <button className="ps1-btn ps1-btn--left" onClick={goBack} aria-label="Previous page">
+        <span className="ps1-arrow" />
+      </button>
+      <button className="ps1-btn ps1-btn--right" onClick={goNext} aria-label="Next page">
+        <span className="ps1-arrow ps1-arrow--right" />
+      </button>
     </>
   );
 };
