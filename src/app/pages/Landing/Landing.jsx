@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Carousel from "@functional/Carousel/Carousel";
+import Screen from "@functional/Screen/Screen";
 
 const PAGES = [
   { title: "Vfx", key: "vfx", route: "/vfx" },
@@ -10,13 +11,12 @@ const PAGES = [
   { title: "Contact", key: "contact", route: "/contact" },
 ];
 
-const HOVER_DELAY = 2000;
+const SETTLE_DELAY = 1500;
 
 const Landing = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [hoveredKey, setHoveredKey] = useState(null);
   const [activeVideoKey, setActiveVideoKey] = useState(null);
-  const hoverTimerRef = useRef();
+  const videoTimerRef = useRef();
 
   const wrappedIndex = ((activeIndex % PAGES.length) + PAGES.length) % PAGES.length;
   const activePage = PAGES[wrappedIndex];
@@ -25,18 +25,15 @@ const Landing = () => {
   const goBack = () => setActiveIndex((i) => i - 1);
 
   useEffect(() => {
-    clearTimeout(hoverTimerRef.current);
+    clearTimeout(videoTimerRef.current);
+    setActiveVideoKey(null);
 
-    if (hoveredKey) {
-      hoverTimerRef.current = setTimeout(() => {
-        setActiveVideoKey(hoveredKey);
-      }, HOVER_DELAY);
-    } else {
-      setActiveVideoKey(null);
-    }
+    videoTimerRef.current = setTimeout(() => {
+      setActiveVideoKey(activePage.key);
+    }, SETTLE_DELAY);
 
-    return () => clearTimeout(hoverTimerRef.current);
-  }, [hoveredKey]);
+    return () => clearTimeout(videoTimerRef.current);
+  }, [activePage.key]);
 
   return (
     <>
@@ -45,7 +42,8 @@ const Landing = () => {
         <Environment preset="studio" />
 
         <Suspense fallback={null}>
-          <Carousel pages={PAGES} activeIndex={activeIndex} onHoveredPageChange={setHoveredKey} />
+          <Carousel pages={PAGES} activeIndex={activeIndex} />
+          <Screen activeVideoKey={activeVideoKey} />
         </Suspense>
       </Canvas>
 

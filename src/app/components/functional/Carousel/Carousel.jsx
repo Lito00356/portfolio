@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const RADIUS = 1;
 const SMOOTHING = 0.08;
 
-const Carousel = ({ pages, activeIndex, onHoveredPageChange }) => {
+const Carousel = ({ pages, activeIndex }) => {
   const groupRef = useRef(null);
   const navigate = useNavigate();
   const angleStep = (2 * Math.PI) / pages.length;
@@ -31,7 +31,6 @@ const Carousel = ({ pages, activeIndex, onHoveredPageChange }) => {
         rotation={[0, angle, 0]}
         floatOffset={index * 0.7}
         texturePath={STICKERS[page.key]}
-        onHoverChange={(isHovering) => onHoveredPageChange?.(isHovering ? page.key : null)}
         onSelect={() => navigate(page.route)}
       />
     );
