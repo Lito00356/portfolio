@@ -1,5 +1,5 @@
 import { MODELS } from "@lib/paths";
-import { useGLTF, useTexture } from "@react-three/drei";
+import { useEnvironment, useGLTF, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { SRGBColorSpace } from "three";
@@ -10,7 +10,7 @@ const FLOAT_AMPLITUDE = 0.02;
 const TILT_AMPLITUDE = 0.02;
 const PAN_AMPLITUDE = 0.08;
 
-export const Floppy = ({ texturePath, onSelect, position, rotation, floatOffset = 0, ...props }) => {
+export const Floppy = ({ texturePath, onSelect, position, rotation, isActive, floatOffset = 0, ...props }) => {
   const { scene } = useGLTF(MODELS.floppy);
   const [hovered, setHovered] = useState(false);
   const ref = useRef();
@@ -18,11 +18,12 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, floatOffset 
     texture.flipY = false;
     texture.colorSpace = SRGBColorSpace;
   });
+  const environmentTexture = useEnvironment({ preset: "studio" });
 
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true);
     clone.traverse((child) => {
-      if (child.isMesh && child.material.name === "Sticker") {
+      if (child.isMesh) {
         child.material = child.material.clone();
       }
     });
@@ -47,6 +48,15 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, floatOffset 
     ref.current.rotation.z = Math.sin(time * 1 + floatOffset) * TILT_AMPLITUDE;
     ref.current.rotation.x = Math.cos(time * 0.8 + floatOffset) * PAN_AMPLITUDE;
   });
+
+  useEffect(() => {
+    clonedScene.traverse((child) => {
+      if (child.isMesh) {
+        child.material.envMap = isActive ? environmentTexture : null;
+        child.material.needsUpdate = true;
+      }
+    });
+  }, [clonedScene, isActive, environmentTexture]);
 
   return (
     <primitive

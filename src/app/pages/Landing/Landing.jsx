@@ -40,11 +40,10 @@ const Landing = () => {
     <>
       <Canvas className="carousel-canvas">
         <Camera />
-        <ambientLight intensity={0.5} />
-        <Environment preset="studio" />
+        {/* <ambientLight intensity={0.5} /> */}
 
         <Suspense fallback={null}>
-          <Carousel pages={PAGES} activeIndex={activeIndex} />
+          <Carousel pages={PAGES} activeIndex={activeIndex} activePageIndex={wrappedIndex} />
           <Screen activeVideoKey={activeVideoKey} />
         </Suspense>
       </Canvas>

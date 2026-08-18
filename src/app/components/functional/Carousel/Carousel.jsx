@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const RADIUS = 1;
 const SMOOTHING = 0.08;
 
-const Carousel = ({ pages, activeIndex }) => {
+const Carousel = ({ pages, activeIndex, activePageIndex }) => {
   const groupRef = useRef(null);
   const navigate = useNavigate();
   const angleStep = (2 * Math.PI) / pages.length;
@@ -31,6 +31,7 @@ const Carousel = ({ pages, activeIndex }) => {
         rotation={[0, angle, 0]}
         floatOffset={index * 0.7}
         texturePath={STICKERS[page.key]}
+        isActive={index === activePageIndex}
         onSelect={() => navigate(page.route)}
       />
     );
