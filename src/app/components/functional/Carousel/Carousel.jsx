@@ -1,5 +1,7 @@
 import Floppy from "@functional/FloppyDisk/Floppy";
 import { STICKERS } from "@lib/paths";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 const PAGES = [
   { title: "Vfx", key: "vfx", route: "/vfx" },
@@ -8,9 +10,20 @@ const PAGES = [
   { title: "Contact", key: "contact", route: "/contact" },
 ];
 
-const RADIUS = 2;
+const RADIUS = 1;
+const SMOOTHING = 0.08;
 
-const Carousel = () => {
+const Carousel = ({ activeIndex }) => {
+  const groupRef = useRef(null);
+  const angleStep = (2 * Math.PI) / PAGES.length;
+  const targetRotation = -activeIndex * angleStep;
+
+  useFrame(() => {
+    if (!groupRef.current) return;
+    const current = groupRef.current.rotation.y;
+    groupRef.current.rotation.y = current + (targetRotation - current) * SMOOTHING;
+  });
+
   const floppyDisks = PAGES.map((page, index) => {
     const angle = index * ((2 * Math.PI) / PAGES.length);
     const x = Math.sin(angle) * RADIUS;
@@ -19,7 +32,7 @@ const Carousel = () => {
     return <Floppy key={page.key} position={[x, 0, z]} rotation={[0, angle, 0]} texturePath={STICKERS[page.key]} />;
   });
 
-  return floppyDisks;
+  return <group ref={groupRef}>{floppyDisks}</group>;
 };
 
 export default Carousel;
