@@ -4,8 +4,8 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { SRGBColorSpace } from "three";
 
-const floppyScale = 1;
-const HOVER_SCALE = 1.03;
+const FLOPPY_SCALE = 0.5;
+const HOVER_SCALE = 0.52;
 const FLOAT_AMPLITUDE = 0.02;
 const TILT_AMPLITUDE = 0.02;
 const PAN_AMPLITUDE = 0.08;
@@ -54,7 +54,7 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, floatOffset 
       object={clonedScene}
       position={position}
       rotation={rotation}
-      scale={hovered ? HOVER_SCALE : floppyScale}
+      scale={hovered ? HOVER_SCALE : FLOPPY_SCALE}
       onClick={(e) => {
         e.stopPropagation();
         onSelect?.();

@@ -3,6 +3,7 @@ import { Environment } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Carousel from "@functional/Carousel/Carousel";
 import Screen from "@functional/Screen/Screen";
+import Camera from "@functional/Camera/Camera";
 
 const PAGES = [
   { title: "Vfx", key: "vfx", route: "/vfx" },
@@ -37,7 +38,8 @@ const Landing = () => {
 
   return (
     <>
-      <Canvas className="carousel-canvas" camera={{ position: [0, 2, 5], fov: 35 }}>
+      <Canvas className="carousel-canvas">
+        <Camera />
         <ambientLight intensity={0.5} />
         <Environment preset="studio" />
 
