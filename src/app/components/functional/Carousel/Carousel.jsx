@@ -1,10 +1,12 @@
 import Floppy from "@functional/FloppyDisk/Floppy";
+import Shield from "@functional/Shield/Shield";
 import { STICKERS } from "@lib/paths";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { useNavigate } from "react-router";
 
 const SMOOTHING = 0.08;
+const SHIELD_Z_OFFSET = 0.3;
 
 const Carousel = ({ pages, activeIndex, activePageIndex, radius }) => {
   const groupRef = useRef(null);
@@ -36,7 +38,12 @@ const Carousel = ({ pages, activeIndex, activePageIndex, radius }) => {
     );
   });
 
-  return <group ref={groupRef}>{floppyDisks}</group>;
+  return (
+    <>
+      <Shield radius={radius} shieldOffset={SHIELD_Z_OFFSET} />
+      <group ref={groupRef}>{floppyDisks}</group>
+    </>
+  );
 };
 
 export default Carousel;

@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber";
-import { SpotLight } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Carousel from "@functional/Carousel/Carousel";
 import Screen from "@functional/Screen/Screen";

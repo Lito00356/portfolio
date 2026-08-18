@@ -73,8 +73,8 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, isActive, fl
       }}
       onPointerOver={(e) => {
         e.stopPropagation();
-        setHovered(true);
-        document.body.style.cursor = "pointer";
+        setHovered(isActive ? true : false);
+        document.body.style.cursor = isActive ? "pointer" : "auto";
       }}
       onPointerOut={(e) => {
         e.stopPropagation();
