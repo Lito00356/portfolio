@@ -16,6 +16,7 @@ const Screen = ({ activeVideoKey }) => {
   const [videoTexture, setVideoTexture] = useState(null);
 
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
 
   useEffect(() => {
     const video = document.createElement("video");
@@ -84,11 +85,20 @@ const Screen = ({ activeVideoKey }) => {
   // useFrame-lus de kleur al naar wit te lerpen terwijl `map` via JSX nog
   // steeds null is (React state-update is async), wat een witte flits geeft.
   useEffect(() => {
+    if (isVideoReady) {
+      targetColor.current.set(1, 1, 1);
+      setHasLoadedOnce(true);
+    }
+  }, [isVideoReady]);
+
+  // Shader hoeft maar één keer opnieuw te compileren: de eerste keer dat
+  // `map` van null naar een echte texture gaat. Daarna blijft `map` altijd
+  // gebonden (zie hasLoadedOnce hierboven), dus dit effect vuurt nooit meer.
+  useEffect(() => {
+    if (!hasLoadedOnce) return;
     if (materialRef.current) materialRef.current.needsUpdate = true;
     if (reflectionMaterialRef.current) reflectionMaterialRef.current.needsUpdate = true;
-
-    if (isVideoReady) targetColor.current.set(1, 1, 1);
-  }, [isVideoReady]);
+  }, [hasLoadedOnce]);
 
   useFrame(() => {
     if (materialRef.current) materialRef.current.color.lerp(targetColor.current, 0.1);
@@ -99,14 +109,19 @@ const Screen = ({ activeVideoKey }) => {
     <group>
       <mesh position={[0, 1.5, -3]}>
         <planeGeometry args={SCREEN_SIZE} />
-        <meshBasicMaterial ref={materialRef} color={[0, 0, 0]} map={isVideoReady ? videoTexture : null} toneMapped={false} />
+        <meshBasicMaterial
+          ref={materialRef}
+          color={[0, 0, 0]}
+          map={hasLoadedOnce ? videoTexture : null}
+          toneMapped={false}
+        />
       </mesh>
 
       <mesh position={[0, 0, -2]} rotation={[-Math.PI / 2.5, 0, 0]}>
         <planeGeometry args={SCREEN_SIZE} />
         <meshBasicMaterial
           ref={reflectionMaterialRef}
-          map={isVideoReady ? reflectionTexture : null}
+          map={hasLoadedOnce ? reflectionTexture : null}
           color={[0, 0, 0]}
           transparent
           opacity={REFLECTION_OPACITY}
