@@ -6,6 +6,7 @@ export const MODELS = {
 };
 
 export const STICKERS = {
+  home: "/models/floppy/vfx-sticker.png",
   vfx: "/models/floppy/vfx-sticker.png",
   coding: "/models/floppy/coding-sticker.png",
   about: "/models/floppy/about-sticker.png",
@@ -13,6 +14,7 @@ export const STICKERS = {
 };
 
 export const VIDEOS = {
+  home: "/videos/vfx_effects.webm",
   vfx: "/videos/vfx_effects.webm",
   coding: "/videos/bg_video_abstract.webm",
   about: "/videos/bg_video_abstract.webm",
