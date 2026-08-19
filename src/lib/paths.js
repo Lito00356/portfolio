@@ -13,7 +13,7 @@ export const STICKERS = {
 };
 
 export const VIDEOS = {
-  vfx: "/videos/bg_video_abstract.webm",
+  vfx: "/videos/vfx_effects.webm",
   coding: "/videos/bg_video_abstract.webm",
   about: "/videos/bg_video_abstract.webm",
   contact: "/videos/bg_video_abstract.webm",
