@@ -6,6 +6,7 @@ import Camera from "@functional/Camera/Camera";
 import "./Landing.css";
 
 const PAGES = [
+  { title: "Home", key: "home", route: "/" },
   { title: "Vfx", key: "vfx", route: "/vfx" },
   { title: "Coding", key: "coding", route: "/coding" },
   { title: "About", key: "about", route: "/about" },
