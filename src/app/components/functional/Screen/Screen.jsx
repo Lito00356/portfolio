@@ -4,8 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
 const FADE_DURARTION = 300;
-const REFLECTION_OPACITY = 0.25;
-const SCREEN_SIZE = [6, 3];
+const REFLECTION_OPACITY = 0.2;
 
 const Screen = ({ activeVideoKey }) => {
   const videoRef = useRef(null);
@@ -80,10 +79,6 @@ const Screen = ({ activeVideoKey }) => {
     return clone;
   }, [videoTexture]);
 
-  // We zetten targetColor pas hier (na de React-commit, dus wanneer `map`
-  // écht al gebonden is) en niet meteen in handleReady. Anders begint de
-  // useFrame-lus de kleur al naar wit te lerpen terwijl `map` via JSX nog
-  // steeds null is (React state-update is async), wat een witte flits geeft.
   useEffect(() => {
     if (isVideoReady) {
       targetColor.current.set(1, 1, 1);
@@ -91,9 +86,6 @@ const Screen = ({ activeVideoKey }) => {
     }
   }, [isVideoReady]);
 
-  // Shader hoeft maar één keer opnieuw te compileren: de eerste keer dat
-  // `map` van null naar een echte texture gaat. Daarna blijft `map` altijd
-  // gebonden (zie hasLoadedOnce hierboven), dus dit effect vuurt nooit meer.
   useEffect(() => {
     if (!hasLoadedOnce) return;
     if (materialRef.current) materialRef.current.needsUpdate = true;
@@ -107,8 +99,8 @@ const Screen = ({ activeVideoKey }) => {
 
   return (
     <group>
-      <mesh position={[0, 1.5, -3]}>
-        <planeGeometry args={SCREEN_SIZE} />
+      <mesh position={[0, 1.25, -6]}>
+        <planeGeometry args={[10, 4]} />
         <meshBasicMaterial
           ref={materialRef}
           color={[0, 0, 0]}
@@ -117,8 +109,8 @@ const Screen = ({ activeVideoKey }) => {
         />
       </mesh>
 
-      <mesh position={[0, 0, -2]} rotation={[-Math.PI / 2.5, 0, 0]}>
-        <planeGeometry args={SCREEN_SIZE} />
+      <mesh position={[0, -0.8, -2]} rotation={[-Math.PI / 2.5, 0, 0]}>
+        <planeGeometry args={[7.5, 3]} />
         <meshBasicMaterial
           ref={reflectionMaterialRef}
           map={hasLoadedOnce ? reflectionTexture : null}

@@ -42,7 +42,6 @@ const Landing = () => {
     <>
       <Canvas className="carousel-canvas">
         <Camera />
-        {/* <SpotLight radius={RADIUS} /> */}
         <spotLight intensity={1} />
         <Suspense fallback={null}>
           <Carousel pages={PAGES} activeIndex={activeIndex} activePageIndex={wrappedIndex} radius={RADIUS} />
