@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Landing from "@pages/landing/landing.jsx";
 import Vfx from "@pages/vfx/vfx.jsx";
 import Coding from "@pages/coding/coding.jsx";
+import CodingDetail from "@pages/coding/codingDetail.jsx";
 import About from "@pages/about/about.jsx";
 import Contact from "@pages/contact/contact.jsx";
 import Navlayout from "@functional/Layout/Navlayout";
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
         <Route element={<Navlayout />}>
           <Route path="/vfx" element={<Vfx />} />
           <Route path="/coding" element={<Coding />} />
+          <Route path="/coding/:slug" element={<CodingDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Route>

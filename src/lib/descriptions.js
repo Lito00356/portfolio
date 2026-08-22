@@ -1,3 +1,77 @@
+const buildImages = (folder, count, title) =>
+  Array.from({ length: count }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return {
+      webp: `/images/webp/${folder}_${n}.webp`,
+      png: `/images/${folder}_${n}.png`,
+      alt: `${title} screenshot ${i + 1}`,
+    };
+  });
+
+export const CODING_PROJECTS = [
+  {
+    id: 1,
+    slug: "seapark-lss",
+    title: "Seapark LSS",
+    type: "Web App",
+    description:
+      "Beheersysteem voor een zeepark. Crew, departments (Dolphins, Sea Lions, Seals, Aquasplash), taken en waterkwaliteitsmetingen worden centraal opgevolgd via dashboards en meldingen.",
+    cover: { webp: "/images/webp/bwd_seapark_02.webp", png: "/images/bwd_seapark_02.png" },
+    alt: "Seapark LSS dashboard met departments overzicht",
+    images: buildImages("bwd_seapark", 9, "Seapark LSS"),
+  },
+  {
+    id: 2,
+    slug: "roomcraft",
+    title: "RoomCraft",
+    type: "Configurator",
+    description:
+      "3D kamerconfigurator waarmee gebruikers een ruimte tekenen, meubels toevoegen en het resultaat meteen in 3D bekijken, van blueprint tot perspectiefweergave.",
+    cover: { webp: "/images/webp/configurate3D_01.webp", png: "/images/configurate3D_01.png" },
+    alt: "RoomCraft landingspagina",
+    images: buildImages("configurate3D", 9, "RoomCraft"),
+  },
+  {
+    id: 3,
+    slug: "kanbanana",
+    title: "Kanbanana",
+    type: "Web App",
+    description:
+      "Kanban-bord voor projectbeheer met To Do, In Progress, Ready For Review en Done kolommen, een backlog-overzicht en taakkaarten met tags en beschrijvingen.",
+    cover: { webp: "/images/webp/kanbanana_02.webp", png: "/images/kanbanana_02.png" },
+    alt: "Kanbanana bord met taken",
+    images: buildImages("kanbanana", 5, "Kanbanana"),
+  },
+  {
+    id: 4,
+    slug: "tracking-marker",
+    title: "Tracking Marker",
+    type: "Web App",
+    description:
+      "Persoonlijke takentracker met categorieën zoals Work, Hobby en Home, pending/done overzichten en een login systeem om overal te kunnen opvolgen.",
+    cover: { webp: "/images/webp/tracking_marker_04.webp", png: "/images/tracking_marker_04.png" },
+    alt: "Tracking Marker takenoverzicht",
+    images: buildImages("tracking_marker", 7, "Tracking Marker"),
+  },
+  {
+    id: 5,
+    slug: "foosball",
+    title: "Foosball",
+    type: "Phone App",
+    description:
+      "Companion app voor de tafelvoetbaltafel: scores bijhouden, matches loggen en een klein leaderboard. Nog in ontwikkeling, screenshots volgen binnenkort.",
+    cover: { webp: null, png: "https://placehold.co/800x1000/090109/e2e2e2?text=Foosball" },
+    alt: "Placeholder afbeelding voor Foosball project",
+    images: [
+      {
+        webp: null,
+        png: "https://placehold.co/1200x800/090109/e2e2e2?text=Foosball",
+        alt: "Placeholder afbeelding voor Foosball project",
+      },
+    ],
+  },
+];
+
 export const PROJECTS = [
   {
     id: 1,
@@ -6,6 +80,7 @@ export const PROJECTS = [
     description: "Action movie about John Wick",
     image: "/images/webp/john_wick4.webp",
     alt: "John Wick 4 movieposter",
+    imdb: "https://www.imdb.com/title/tt10366206/",
   },
   {
     id: 2,
@@ -14,6 +89,7 @@ export const PROJECTS = [
     description: "Action movie about a spy",
     image: "/images/webp/heart_of_stone.webp",
     alt: "Heart of Stone movieposter",
+    imdb: "https://www.imdb.com/title/tt13603966/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_heart%20of%20stone",
   },
   {
     id: 3,
@@ -22,6 +98,7 @@ export const PROJECTS = [
     description: "Science-fiction and superpowers in WWII",
     image: "/images/webp/freaks_out.webp",
     alt: "Freaks Out movieposter",
+    imdb: "https://www.imdb.com/title/tt7270808/?ref_=fn_t_1",
   },
   {
     id: 4,
@@ -30,14 +107,16 @@ export const PROJECTS = [
     description: "A lost world where food is scarce! Thrilling sci-fi and great visuals",
     image: "/images/webp/vesper.webp",
     alt: "Vesper movieposter",
+    imdb: "https://www.imdb.com/title/tt20225374/?ref_=nv_sr_srsg_0_tt_4_nm_4_in_0_q_vesper",
   },
   {
     id: 5,
-    title: "The Witcher Season 4",
+    title: "The Witcher Season 3",
     type: "Series",
     description: "Series about Geralt Of Rivia trying to find his ward from the law of surprise",
     image: "/images/webp/the_witcher.webp",
-    alt: "The Witcher season 4 series poster",
+    alt: "The Witcher season 3 series poster",
+    imdb: "https://www.imdb.com/title/tt5180504/?ref_=nv_sr_srsg_0_tt_6_nm_1_in_1_q_the%20witcher",
   },
   {
     id: 6,
@@ -46,5 +125,6 @@ export const PROJECTS = [
     description: "Muscles from Brussels are back! Comedy packed with humor and nostalgia",
     image: "/images/webp/le_jardinier.webp",
     alt: "Le Jardinier movieposter",
+    imdb: "https://www.imdb.com/title/tt30973842/?ref_=fn_t_1",
   },
 ];

@@ -64,7 +64,7 @@ export const Vfx = () => {
                 {project.type === "Movie" ? <MovieIcon /> : <SeriesIcon />}
                 <small>{project.type}</small>
                 <br />
-                <a className="description__link" href="details.html" aria-label={`Details for ${project.title}`} />
+                <a className="description__link" href={`${project.imdb}`} aria-label={`Details for ${project.title}`} />
               </div>
               <strong>{project.title}</strong>
               <p>{project.description}</p>

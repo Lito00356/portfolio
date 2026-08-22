@@ -3,77 +3,21 @@
   inset: 0;
 }
 
-.ps1-btn {
+.carousel-canvas ~ .ps1-btn {
   position: absolute;
   top: 78%;
   transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-black);
-  border: 2px solid var(--color-white);
-  border-radius: 0;
-  box-shadow: 4px 4px 0 0 var(--accent);
-  cursor: pointer;
   z-index: 10;
-  transition:
-    transform 0.08s ease,
-    box-shadow 0.08s ease;
 }
 
-.ps1-btn:hover {
-  box-shadow: 4px 4px 0 0 var(--accent-light);
-}
-
-.ps1-btn:hover .ps1-arrow {
-  background-color: var(--accent-light);
-}
-
-.ps1-btn:active {
+.carousel-canvas ~ .ps1-btn:active {
   transform: translateY(-50%) translate(4px, 4px);
-  box-shadow: 0 0 0 0 var(--accent);
 }
 
-.ps1-btn:focus-visible {
-  outline: 2px dashed var(--accent-light);
-  outline-offset: 3px;
-}
-
-.ps1-btn--left {
+.carousel-canvas ~ .ps1-btn--left {
   left: 5%;
 }
 
-.ps1-btn--right {
+.carousel-canvas ~ .ps1-btn--right {
   right: 5%;
-}
-
-.ps1-arrow {
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: var(--color-white);
-  transition: background-color 0.08s ease;
-  clip-path: polygon(
-    100% 0%,
-    87.5% 0%,
-    87.5% 12.5%,
-    75% 12.5%,
-    75% 25%,
-    62.5% 25%,
-    62.5% 37.5%,
-    50% 37.5%,
-    50% 62.5%,
-    62.5% 62.5%,
-    62.5% 75%,
-    75% 75%,
-    75% 87.5%,
-    87.5% 87.5%,
-    87.5% 100%,
-    100% 100%
-  );
-}
-
-.ps1-arrow--right {
-  transform: scaleX(-1);
 }
