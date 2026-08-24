@@ -65,7 +65,7 @@ export const CODING_PROJECTS = [
     id: 5,
     slug: "foosball",
     title: "Foosball",
-    type: "App",
+    type: "Native App",
     description:
       "Companion app voor de tafelvoetbaltafel: scores bijhouden, matches loggen en een klein leaderboard. Nog in ontwikkeling, screenshots volgen binnenkort.",
     cover: "/images/thumbnails/foosball.jpg",
@@ -128,5 +128,14 @@ export const VFX_PROJECTS = [
     image: "/images/webp/le_jardinier.webp",
     alt: "Le Jardinier movieposter",
     imdb: "https://www.imdb.com/title/tt30973842/?ref_=fn_t_1",
+  },
+  {
+    id: 7,
+    title: "More will be added soon",
+    type: "Soon",
+    description: "The rest of my work will soon be visible!",
+    image: "https://placehold.co/400x600/090109/e2e2e2?text=More+Soon",
+    alt: "Placeholder for upcoming VFX projects",
+    imdb: "",
   },
 ];

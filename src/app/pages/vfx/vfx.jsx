@@ -61,10 +61,13 @@ export const Vfx = () => {
 
             <div className="grid__item-description">
               <div className="description__wrapper">
-                {project.type === "Movie" ? <MovieIcon /> : <SeriesIcon />}
+                {project.type === "Movie" && <MovieIcon />}
+                {project.type === "Series" && <SeriesIcon />}
                 <small>{project.type}</small>
                 <br />
-                <a className="description__link" href={`${project.imdb}`} aria-label={`Details for ${project.title}`} />
+                {project.imdb && (
+                  <a className="description__link" href={project.imdb} aria-label={`Details for ${project.title}`} />
+                )}
               </div>
               <strong>{project.title}</strong>
               <p>{project.description}</p>
