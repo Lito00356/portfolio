@@ -1,5 +1,5 @@
 import { MODELS } from "@lib/paths";
-import { useEnvironment, useGLTF, useTexture } from "@react-three/drei";
+import { useCursor, useEnvironment, useGLTF, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { SRGBColorSpace } from "three";
@@ -20,6 +20,8 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, isActive, fl
     texture.colorSpace = SRGBColorSpace;
   });
   const environmentTexture = useEnvironment({ preset: "studio" });
+
+  useCursor(hovered);
 
   const clonedScene = useMemo(() => {
     const clone = scene.clone(true);
@@ -74,12 +76,10 @@ export const Floppy = ({ texturePath, onSelect, position, rotation, isActive, fl
       onPointerOver={(e) => {
         e.stopPropagation();
         setHovered(isActive ? true : false);
-        document.body.style.cursor = isActive ? "pointer" : "auto";
       }}
       onPointerOut={(e) => {
         e.stopPropagation();
         setHovered(false);
-        document.body.style.cursor = "auto";
       }}
       {...props}
     />

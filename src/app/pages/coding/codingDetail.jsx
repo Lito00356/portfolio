@@ -12,9 +12,9 @@ const CodingDetail = () => {
   if (!project) {
     return (
       <section className="container-80 title-wrapper project-detail__not-found">
-        <h1 className="title title--center">Project niet gevonden</h1>
+        <h1 className="title title--center">Project not found</h1>
         <Link className="button" to="/coding">
-          ← Terug naar Coding
+          ← Back to Coding
         </Link>
       </section>
     );
@@ -41,6 +41,22 @@ const CodingDetail = () => {
 
       <section className="container-80 project-detail__body">
         <p className="project-detail__description">{project.description}</p>
+
+        {project.technologies?.length > 0 && (
+          <ul className="project-detail__tech">
+            {project.technologies.map((tech) => (
+              <li key={tech} className="project-detail__tech-item">
+                {tech}
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {project.web && (
+          <a className="button project-detail__link" href={project.web} target="_blank" rel="noreferrer">
+            Project
+          </a>
+        )}
       </section>
 
       <section className="project-carousel" aria-label={`${project.title} screenshots`}>
@@ -60,14 +76,14 @@ const CodingDetail = () => {
             <button
               className="ps1-btn project-carousel__btn project-carousel__btn--left"
               onClick={goPrev}
-              aria-label="Vorige screenshot"
+              aria-label="Previous screenshot"
             >
               <span className="ps1-arrow" />
             </button>
             <button
               className="ps1-btn project-carousel__btn project-carousel__btn--right"
               onClick={goNext}
-              aria-label="Volgende screenshot"
+              aria-label="Next screenshot"
             >
               <span className="ps1-arrow ps1-arrow--right" />
             </button>
@@ -78,7 +94,7 @@ const CodingDetail = () => {
                   key={i}
                   className={i === index ? "project-carousel__dot project-carousel__dot--active" : "project-carousel__dot"}
                   onClick={() => setIndex(i)}
-                  aria-label={`Ga naar screenshot ${i + 1}`}
+                  aria-label={`Go to screenshot ${i + 1}`}
                 />
               ))}
             </div>
@@ -88,7 +104,7 @@ const CodingDetail = () => {
 
       <div className="container-80 project-detail__back">
         <Link className="button" to="/coding">
-          ← Terug naar alle projecten
+          ← Back to all projects
         </Link>
       </div>
     </>

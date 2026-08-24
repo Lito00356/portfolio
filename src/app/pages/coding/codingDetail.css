@@ -57,6 +57,44 @@
   text-align: center;
 }
 
+.project-detail__tech {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  max-width: 50rem;
+  margin: var(--spacing-lg) auto 0;
+  padding: 0;
+}
+
+.project-detail__tech-item {
+  font-size: var(--text-size-sm);
+  color: var(--main-color-light);
+  border: 1px solid var(--main-color-muted);
+  border-radius: var(--radius-2xs);
+  padding: var(--spacing-2xs) var(--spacing-sm);
+}
+
+.project-detail__link {
+  display: block;
+  width: fit-content;
+  margin: var(--spacing-xl) auto 0;
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border: 2px solid var(--main-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-size-base);
+  font-weight: 600;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.project-detail__link:hover {
+  background-color: var(--main-color);
+  color: var(--color-black);
+}
+
 /* ── Carousel ─────────────────────────────────────────── */
 .project-carousel {
   position: relative;
