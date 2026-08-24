@@ -1,28 +1,46 @@
 import { useForm } from "react-hook-form";
 import "./contact.css";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const CONTACT_INFO = {
   name: "Tomasz Liksza",
   role: "Full Stack Developer",
-  email: "jouw.email@example.com",
   linkedin: "https://www.linkedin.com/in/jouw-profiel",
   github: "https://github.com/jouw-gebruikersnaam",
 };
 
 const Contact = () => {
+  const [status, setStatus] = useState("idle");
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm();
+
+  const onValid = (data) => {
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, data, PUBLIC_KEY)
+      .then(() => {
+        setStatus("success");
+        reset();
+      })
+      .catch(() => {
+        setStatus("error");
+      });
+  };
 
   return (
     <section className="container-80 contact">
       <div className="contact__info">
         <h1 className="title">Contact</h1>
-        <p className="contact__tagline">
-          Heb je een project, vraag, of wil je gewoon eens praten? Stuur gerust een bericht.
-        </p>
+        <p className="contact__tagline">Questions, or just want to have a chat? Feel free to send a message!</p>
 
         <ul className="contact__list">
           <li className="contact__item">
@@ -58,7 +76,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <form className="contact__form">
+      <form className="contact__form" onSubmit={handleSubmit(onValid)}>
         <label className="contact__field">
           <span>Name</span>
           <input type="text" {...register("from_name", { required: true })} />
@@ -77,6 +95,8 @@ const Contact = () => {
         <button type="submit" disabled={isSubmitting}>
           Send
         </button>
+        {status === "success" && <p>Message send! I'll reply soon enough</p>}
+        {status === "error" && <p>Something went wrong, definitely not my code.. Please try again</p>}
       </form>
     </section>
   );
