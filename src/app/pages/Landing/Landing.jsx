@@ -55,6 +55,13 @@ const Landing = () => {
       <button className="ps1-btn ps1-btn--right" onClick={goNext} aria-label="Next page">
         <span className="ps1-arrow ps1-arrow--right" />
       </button>
+      <div>
+        <h1>Tomasz Liksza</h1>
+        <div>
+          <span>Full-stack developer</span>
+          <span>Engineering elegant, performant, and powerful web applications.</span>
+        </div>
+      </div>
     </>
   );
 };

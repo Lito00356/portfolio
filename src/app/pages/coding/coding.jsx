@@ -23,12 +23,7 @@ const PhoneAppIcon = () => (
 
 const ConfiguratorIcon = () => (
   <svg className="grid__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-    <path
-      d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"
-      stroke="#e2e2e2"
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
+    <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" stroke="#e2e2e2" strokeWidth="1.5" strokeLinejoin="round" />
     <path d="M3 7l9 5 9-5M12 12v10" stroke="#e2e2e2" strokeWidth="1.5" strokeLinejoin="round" />
   </svg>
 );
@@ -94,8 +89,7 @@ const Coding = () => {
         {filtered.map((project) => (
           <Link key={project.id} to={`/coding/${project.slug}`} className="grid__item grid__item--projects">
             <picture className="grid__media">
-              {project.cover.webp && <source srcSet={project.cover.webp} type="image/webp" />}
-              <img className="media__image" src={project.cover.png} alt={project.alt} loading="lazy" />
+              <img className="media__image" src={project.cover} alt={project.alt} loading="lazy" />
             </picture>
 
             <div className="grid__item-description">

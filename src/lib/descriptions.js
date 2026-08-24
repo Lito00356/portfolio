@@ -16,7 +16,7 @@ export const CODING_PROJECTS = [
     type: "Web App",
     description:
       "Beheersysteem voor een zeepark. Crew, departments (Dolphins, Sea Lions, Seals, Aquasplash), taken en waterkwaliteitsmetingen worden centraal opgevolgd via dashboards en meldingen.",
-    cover: { webp: "/images/webp/bwd_seapark_02.webp", png: "/images/bwd_seapark_02.png" },
+    cover: "/images/thumbnails/seapark.jpg",
     alt: "Seapark LSS dashboard met departments overzicht",
     images: buildImages("bwd_seapark", 9, "Seapark LSS"),
   },
@@ -27,7 +27,7 @@ export const CODING_PROJECTS = [
     type: "Configurator",
     description:
       "3D kamerconfigurator waarmee gebruikers een ruimte tekenen, meubels toevoegen en het resultaat meteen in 3D bekijken, van blueprint tot perspectiefweergave.",
-    cover: { webp: "/images/webp/configurate3D_01.webp", png: "/images/configurate3D_01.png" },
+    cover: "/images/thumbnails/roomcraft.jpg",
     alt: "RoomCraft landingspagina",
     images: buildImages("configurate3D", 9, "RoomCraft"),
   },
@@ -38,7 +38,7 @@ export const CODING_PROJECTS = [
     type: "Web App",
     description:
       "Kanban-bord voor projectbeheer met To Do, In Progress, Ready For Review en Done kolommen, een backlog-overzicht en taakkaarten met tags en beschrijvingen.",
-    cover: { webp: "/images/webp/kanbanana_02.webp", png: "/images/kanbanana_02.png" },
+    cover: "/images/thumbnails/kanbanana.jpg",
     alt: "Kanbanana bord met taken",
     images: buildImages("kanbanana", 5, "Kanbanana"),
   },
@@ -49,7 +49,7 @@ export const CODING_PROJECTS = [
     type: "Web App",
     description:
       "Persoonlijke takentracker met categorieën zoals Work, Hobby en Home, pending/done overzichten en een login systeem om overal te kunnen opvolgen.",
-    cover: { webp: "/images/webp/tracking_marker_04.webp", png: "/images/tracking_marker_04.png" },
+    cover: "/images/thumbnails/todo.jpg",
     alt: "Tracking Marker takenoverzicht",
     images: buildImages("tracking_marker", 7, "Tracking Marker"),
   },
