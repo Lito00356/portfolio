@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./vfx.css";
-import { PROJECTS } from "@lib/descriptions";
+import { VFX_PROJECTS } from "@lib/descriptions";
 import MovieIcon from "@design/CustomIcons/MovieIcon";
 import SeriesIcon from "@design/CustomIcons/SeriesIcon";
 
@@ -26,7 +26,7 @@ const activeStyle = {
 
 export const Vfx = () => {
   const [activeFilter, setActiveFilter] = useState("all");
-  const filtered = PROJECTS.filter((p) => typeMatchesFilter(p.type, activeFilter));
+  const filtered = VFX_PROJECTS.filter((p) => typeMatchesFilter(p.type, activeFilter));
 
   return (
     <>
