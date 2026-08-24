@@ -10,8 +10,8 @@ const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const CONTACT_INFO = {
   name: "Tomasz Liksza",
   role: "Full Stack Developer",
-  linkedin: "https://www.linkedin.com/in/jouw-profiel",
-  github: "https://github.com/jouw-gebruikersnaam",
+  linkedin: "https://linkedin.com/in/tomaszli",
+  github: "https://github.com/Lito00356",
 };
 
 const Contact = () => {
@@ -89,7 +89,7 @@ const Contact = () => {
         </label>
         <label className="contact__field">
           <span>Message</span>
-          <textarea rows={6} {...register("message", { required: true, minLength: 10 })} />
+          <textarea rows={8} {...register("message", { required: true, minLength: 10 })} />
           {errors.message && <small>At least say hello.. (min. 10 tekens)</small>}
         </label>
         <button type="submit" disabled={isSubmitting}>
