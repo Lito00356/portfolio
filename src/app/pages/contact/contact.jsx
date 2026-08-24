@@ -60,7 +60,7 @@ const Contact = () => {
 
       <form className="contact__form">
         <label className="contact__field">
-          <span>Naam</span>
+          <span>Name</span>
           <input type="text" {...register("from_name", { required: true })} />
           {errors.from_name && <small>Please add a name, so I know how to call you!</small>}
         </label>
@@ -70,7 +70,7 @@ const Contact = () => {
           {errors.reply_to && <small>Add a valid e-mail</small>}
         </label>
         <label className="contact__field">
-          <span>Bericht</span>
+          <span>Message</span>
           <textarea rows={6} {...register("message", { required: true, minLength: 10 })} />
           {errors.message && <small>At least say hello.. (min. 10 tekens)</small>}
         </label>
