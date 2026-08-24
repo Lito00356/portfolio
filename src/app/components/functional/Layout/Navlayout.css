@@ -100,8 +100,10 @@
   width: 100%;
 }
 
-.navbar__list-item:has(.navbar__list-link--active):hover::before {
-  width: 0;
+.navbar__list-item:has(.navbar__list-link--active)::before {
+  width: 100%;
+  background-color: var(--accent);
+  transition: none;
 }
 
 .navbar__list-link {
@@ -110,9 +112,6 @@
 }
 
 .navbar__list-link--active {
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 4px;
   font-weight: 700;
 }
 

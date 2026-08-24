@@ -78,13 +78,22 @@ export const CODING_PROJECTS = [
   {
     id: 5,
     slug: "foosball",
-    title: "Foosball",
+    title: "FoosAdmin",
     type: "Native App",
     description:
-      "Companion app for the foosball table: keep score, log matches and a small leaderboard. Still in development, screenshots coming soon.",
+      "A React Native mobile app, built with Expo, for managing foosball competitions, matches, players and statistics. Teams can log match results, browse competitions and manage matchdays through an intuitive interface.",
     cover: "/images/thumbnails/foosball.jpg",
-    alt: "Foosball app calendar with matches",
-    images: buildImages("foosball", 7, "Foosball"),
+    alt: "FoosAdmin app calendar with matches",
+    images: buildImages("foosball", 7, "FoosAdmin"),
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "React Navigation",
+      "TanStack Query",
+      "AsyncStorage",
+    ],
   },
 ];
 
