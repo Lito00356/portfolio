@@ -37,14 +37,14 @@ const ICONS = {
 const FILTERS = [
   { label: "All", value: "all" },
   { label: "Web App", value: "webapp" },
-  { label: "Phone App", value: "phoneapp" },
+  { label: "App", value: "phoneapp" },
   { label: "Configurator", value: "configurator" },
 ];
 
 const typeMatchesFilter = (type, filter) => {
   if (filter === "all") return true;
   if (filter === "webapp") return type === "Web App";
-  if (filter === "phoneapp") return type === "Phone App";
+  if (filter === "phoneapp") return type === "App";
   if (filter === "configurator") return type === "Configurator";
   return false;
 };

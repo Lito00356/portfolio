@@ -57,7 +57,7 @@ export const CODING_PROJECTS = [
     id: 5,
     slug: "foosball",
     title: "Foosball",
-    type: "Phone App",
+    type: "App",
     description:
       "Companion app voor de tafelvoetbaltafel: scores bijhouden, matches loggen en een klein leaderboard. Nog in ontwikkeling, screenshots volgen binnenkort.",
     cover: { webp: null, png: "https://placehold.co/800x1000/090109/e2e2e2?text=Foosball" },
