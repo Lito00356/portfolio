@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import "./contact.css";
 
 const CONTACT_INFO = {
@@ -9,6 +10,12 @@ const CONTACT_INFO = {
 };
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
   return (
     <section className="container-80 contact">
       <div className="contact__info">
@@ -51,8 +58,26 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Formulier: hier bouwen we samen de react-hook-form + EmailJS logica */}
-      <form className="contact__form"></form>
+      <form className="contact__form">
+        <label className="contact__field">
+          <span>Naam</span>
+          <input type="text" {...register("from_name", { required: true })} />
+          {errors.from_name && <small>Please add a name, so I know how to call you!</small>}
+        </label>
+        <label className="contact__field">
+          <span>E-mail</span>
+          <input type="email" {...register("reply_to", { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })} />
+          {errors.reply_to && <small>Add a valid e-mail</small>}
+        </label>
+        <label className="contact__field">
+          <span>Bericht</span>
+          <textarea rows={6} {...register("message", { required: true, minLength: 10 })} />
+          {errors.message && <small>At least say hello.. (min. 10 tekens)</small>}
+        </label>
+        <button type="submit" disabled={isSubmitting}>
+          Send
+        </button>
+      </form>
     </section>
   );
 };
