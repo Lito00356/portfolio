@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./vfx.css";
-import { PROJECTS } from "@lib/descriptions";
+import { VFX_PROJECTS } from "@lib/descriptions";
 import MovieIcon from "@design/CustomIcons/MovieIcon";
 import SeriesIcon from "@design/CustomIcons/SeriesIcon";
 
@@ -26,12 +26,12 @@ const activeStyle = {
 
 export const Vfx = () => {
   const [activeFilter, setActiveFilter] = useState("all");
-  const filtered = PROJECTS.filter((p) => typeMatchesFilter(p.type, activeFilter));
+  const filtered = VFX_PROJECTS.filter((p) => typeMatchesFilter(p.type, activeFilter));
 
   return (
     <>
       <header className="container-80 title-wrapper">
-        <h1 className="title title--center title--projects">VFX_Projects</h1>
+        <h1 className="title title--center title--projects title--vfx">VFX_Projects</h1>
         <small className="title__subtitle">Across the years</small>
       </header>
 
@@ -61,10 +61,13 @@ export const Vfx = () => {
 
             <div className="grid__item-description">
               <div className="description__wrapper">
-                {project.type === "Movie" ? <MovieIcon /> : <SeriesIcon />}
+                {project.type === "Movie" && <MovieIcon />}
+                {project.type === "Series" && <SeriesIcon />}
                 <small>{project.type}</small>
                 <br />
-                <a className="description__link" href={`${project.imdb}`} aria-label={`Details for ${project.title}`} />
+                {project.imdb && (
+                  <a className="description__link" href={project.imdb} aria-label={`Details for ${project.title}`} />
+                )}
               </div>
               <strong>{project.title}</strong>
               <p>{project.description}</p>

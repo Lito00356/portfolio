@@ -30,7 +30,7 @@
 }
 
 .about__resume {
-  align-self: flex-start;
+  align-self: flex-end;
   padding: var(--spacing-sm) var(--spacing-xl);
   border: 2px solid var(--main-color);
   border-radius: var(--radius-sm);

@@ -21,3 +21,60 @@
 .carousel-canvas ~ .ps1-btn--right {
   right: 5%;
 }
+
+.landing__intro {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  padding: 0 var(--page-gutter);
+}
+
+.landing__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-2xs);
+}
+
+.landing__name,
+.landing__role,
+.landing__tagline {
+  background-image: linear-gradient(
+    100deg,
+    var(--text-white) 0%,
+    var(--text-white) 40%,
+    var(--main-color-light) 50%,
+    var(--text-white) 60%,
+    var(--text-white) 100%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: var(--text-white);
+  -webkit-text-fill-color: transparent;
+  animation: landing-glint 7s ease-in-out infinite;
+}
+
+.landing__role,
+.landing__tagline {
+  animation-delay: 2s;
+}
+
+@keyframes landing-glint {
+  0% {
+    background-position: 100% 0;
+  }
+  25% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}

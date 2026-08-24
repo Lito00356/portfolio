@@ -55,6 +55,13 @@ const Landing = () => {
       <button className="ps1-btn ps1-btn--right" onClick={goNext} aria-label="Next page">
         <span className="ps1-arrow ps1-arrow--right" />
       </button>
+      <div className="landing__intro">
+        <h1 className="landing__name">Tomasz Liksza</h1>
+        <div className="landing__meta">
+          <span className="landing__role">Full-stack developer</span>
+          <small className="landing__tagline">Understand. Build. Improve.</small>
+        </div>
+      </div>
     </>
   );
 };

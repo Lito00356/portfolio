@@ -15,10 +15,13 @@ export const CODING_PROJECTS = [
     title: "Seapark LSS",
     type: "Web App",
     description:
-      "Beheersysteem voor een zeepark. Crew, departments (Dolphins, Sea Lions, Seals, Aquasplash), taken en waterkwaliteitsmetingen worden centraal opgevolgd via dashboards en meldingen.",
-    cover: { webp: "/images/webp/bwd_seapark_02.webp", png: "/images/bwd_seapark_02.png" },
-    alt: "Seapark LSS dashboard met departments overzicht",
+      "Management system for a sea park. Crew, departments (Dolphins, Sea Lions, Seals, Aquasplash), tasks and water quality measurements are tracked centrally through dashboards and notifications.",
+    info: "You can login to all users with pin '0000'",
+    cover: "/images/thumbnails/seapark.jpg",
+    alt: "Seapark LSS dashboard with departments overview",
     images: buildImages("bwd_seapark", 9, "Seapark LSS"),
+    web: "https://boudewijnseapark-server.onrender.com/",
+    technologies: ["EJS", "Express", "Knex", "Objection.js", "SQLite", "bcrypt", "CSS", "JavaScript"],
   },
   {
     id: 2,
@@ -26,10 +29,23 @@ export const CODING_PROJECTS = [
     title: "RoomCraft",
     type: "Configurator",
     description:
-      "3D kamerconfigurator waarmee gebruikers een ruimte tekenen, meubels toevoegen en het resultaat meteen in 3D bekijken, van blueprint tot perspectiefweergave.",
-    cover: { webp: "/images/webp/configurate3D_01.webp", png: "/images/configurate3D_01.png" },
-    alt: "RoomCraft landingspagina",
+      "3D room configurator that lets users draw a room, add furniture and instantly preview the result in 3D, from blueprint to perspective view.",
+    info: "You can create a new user and try out the app",
+    cover: "/images/thumbnails/roomcraft.jpg",
+    alt: "RoomCraft landing page",
     images: buildImages("configurate3D", 9, "RoomCraft"),
+    web: "https://afstudeerproject-lito00356.onrender.com/",
+    technologies: [
+      "React",
+      "Vite",
+      "Three.js",
+      "React Three Fiber",
+      "Drei",
+      "Supabase",
+      "React Query",
+      "React Router",
+      "React Hook Form",
+    ],
   },
   {
     id: 3,
@@ -37,10 +53,13 @@ export const CODING_PROJECTS = [
     title: "Kanbanana",
     type: "Web App",
     description:
-      "Kanban-bord voor projectbeheer met To Do, In Progress, Ready For Review en Done kolommen, een backlog-overzicht en taakkaarten met tags en beschrijvingen.",
-    cover: { webp: "/images/webp/kanbanana_02.webp", png: "/images/kanbanana_02.png" },
-    alt: "Kanbanana bord met taken",
+      "Kanban board for project management with To Do, In Progress, Ready For Review and Done columns, a backlog overview and task cards with tags and descriptions.",
+    info: "Play with current set up projects or add a new one",
+    cover: "/images/thumbnails/kanbanana.jpg",
+    alt: "Kanbanana board with tasks",
     images: buildImages("kanbanana", 5, "Kanbanana"),
+    web: "https://kanbanana-r1kw.onrender.com/",
+    technologies: ["React", "Strapi", "CSS"],
   },
   {
     id: 4,
@@ -48,31 +67,37 @@ export const CODING_PROJECTS = [
     title: "Tracking Marker",
     type: "Web App",
     description:
-      "Persoonlijke takentracker met categorieën zoals Work, Hobby en Home, pending/done overzichten en een login systeem om overal te kunnen opvolgen.",
-    cover: { webp: "/images/webp/tracking_marker_04.webp", png: "/images/tracking_marker_04.png" },
-    alt: "Tracking Marker takenoverzicht",
+      "Personal task tracker with categories such as Work, Hobby and Home, pending/done overviews and a login system so you can keep track from anywhere.",
+    info: "You can create a new user for this app",
+    cover: "/images/thumbnails/todo.jpg",
+    alt: "Tracking Marker task overview",
     images: buildImages("tracking_marker", 7, "Tracking Marker"),
+    web: "https://todo-app-eydb.onrender.com/",
+    technologies: ["EJS", "Express", "Knex", "Objection.js", "SQLite", "bcrypt", "JWT", "JavaScript"],
   },
   {
     id: 5,
     slug: "foosball",
-    title: "Foosball",
-    type: "Phone App",
+    title: "FoosAdmin",
+    type: "Native App",
     description:
-      "Companion app voor de tafelvoetbaltafel: scores bijhouden, matches loggen en een klein leaderboard. Nog in ontwikkeling, screenshots volgen binnenkort.",
-    cover: { webp: null, png: "https://placehold.co/800x1000/090109/e2e2e2?text=Foosball" },
-    alt: "Placeholder afbeelding voor Foosball project",
-    images: [
-      {
-        webp: null,
-        png: "https://placehold.co/1200x800/090109/e2e2e2?text=Foosball",
-        alt: "Placeholder afbeelding voor Foosball project",
-      },
+      "A React Native mobile app, built with Expo, for managing foosball competitions, matches, players and statistics. Teams can log match results, browse competitions and manage matchdays through an intuitive interface.",
+    cover: "/images/thumbnails/foosball.jpg",
+    alt: "FoosAdmin app calendar with matches",
+    images: buildImages("foosball", 7, "FoosAdmin"),
+    technologies: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Expo Router",
+      "React Navigation",
+      "TanStack Query",
+      "AsyncStorage",
     ],
   },
 ];
 
-export const PROJECTS = [
+export const VFX_PROJECTS = [
   {
     id: 1,
     title: "John Wick 4",
@@ -126,5 +151,14 @@ export const PROJECTS = [
     image: "/images/webp/le_jardinier.webp",
     alt: "Le Jardinier movieposter",
     imdb: "https://www.imdb.com/title/tt30973842/?ref_=fn_t_1",
+  },
+  {
+    id: 7,
+    title: "More will be added soon",
+    type: "Soon",
+    description: "The rest of my work will soon be visible!",
+    image: "https://placehold.co/400x600/090109/e2e2e2?text=More+Soon",
+    alt: "Placeholder for upcoming VFX projects",
+    imdb: "",
   },
 ];

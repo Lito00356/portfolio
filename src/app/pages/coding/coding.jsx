@@ -23,12 +23,7 @@ const PhoneAppIcon = () => (
 
 const ConfiguratorIcon = () => (
   <svg className="grid__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
-    <path
-      d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"
-      stroke="#e2e2e2"
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
+    <path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" stroke="#e2e2e2" strokeWidth="1.5" strokeLinejoin="round" />
     <path d="M3 7l9 5 9-5M12 12v10" stroke="#e2e2e2" strokeWidth="1.5" strokeLinejoin="round" />
   </svg>
 );
@@ -42,14 +37,14 @@ const ICONS = {
 const FILTERS = [
   { label: "All", value: "all" },
   { label: "Web App", value: "webapp" },
-  { label: "Phone App", value: "phoneapp" },
+  { label: "Native App", value: "phoneapp" },
   { label: "Configurator", value: "configurator" },
 ];
 
 const typeMatchesFilter = (type, filter) => {
   if (filter === "all") return true;
   if (filter === "webapp") return type === "Web App";
-  if (filter === "phoneapp") return type === "Phone App";
+  if (filter === "phoneapp") return type === "Native App";
   if (filter === "configurator") return type === "Configurator";
   return false;
 };
@@ -70,7 +65,7 @@ const Coding = () => {
     <>
       <header className="container-80 title-wrapper">
         <h1 className="title title--center title--projects">Coding</h1>
-        <small className="title__subtitle">Side projects & experiments</small>
+        <small className="title__subtitle">Projects</small>
       </header>
 
       <nav className="navbar-filter" aria-label="Project Categories">
@@ -94,8 +89,7 @@ const Coding = () => {
         {filtered.map((project) => (
           <Link key={project.id} to={`/coding/${project.slug}`} className="grid__item grid__item--projects">
             <picture className="grid__media">
-              {project.cover.webp && <source srcSet={project.cover.webp} type="image/webp" />}
-              <img className="media__image" src={project.cover.png} alt={project.alt} loading="lazy" />
+              <img className="media__image" src={project.cover} alt={project.alt} loading="lazy" />
             </picture>
 
             <div className="grid__item-description">
