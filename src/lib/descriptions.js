@@ -68,8 +68,8 @@ export const CODING_PROJECTS = [
     type: "App",
     description:
       "Companion app voor de tafelvoetbaltafel: scores bijhouden, matches loggen en een klein leaderboard. Nog in ontwikkeling, screenshots volgen binnenkort.",
-    cover: { webp: null, png: "https://placehold.co/800x1000/090109/e2e2e2?text=Foosball" },
-    alt: "Placeholder afbeelding voor Foosball project",
+    cover: "/images/thumbnails/foosball.jpg",
+    alt: "Foosforce app kalender met wedstrijden",
     images: buildImages("foosball", 7, "Foosball"),
   },
 ];
