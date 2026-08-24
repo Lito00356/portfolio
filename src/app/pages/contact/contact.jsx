@@ -1,6 +1,5 @@
 import "./contact.css";
 
-// TODO: vervang door je echte gegevens
 const CONTACT_INFO = {
   name: "Tomasz Liksza",
   role: "Full Stack Developer",
