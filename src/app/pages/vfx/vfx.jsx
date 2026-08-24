@@ -31,7 +31,7 @@ export const Vfx = () => {
   return (
     <>
       <header className="container-80 title-wrapper">
-        <h1 className="title title--center title--projects">VFX_Projects</h1>
+        <h1 className="title title--center title--projects title--vfx">VFX_Projects</h1>
         <small className="title__subtitle">Across the years</small>
       </header>
 
