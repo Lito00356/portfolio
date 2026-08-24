@@ -21,6 +21,7 @@ const CodingDetail = () => {
   }
 
   const { images } = project;
+  const banner = images[0];
   const goPrev = () => setIndex((i) => (i - 1 + images.length) % images.length);
   const goNext = () => setIndex((i) => (i + 1) % images.length);
 
@@ -28,8 +29,8 @@ const CodingDetail = () => {
     <>
       <section className="project-banner">
         <picture className="project-banner__media">
-          {project.cover.webp && <source srcSet={project.cover.webp} type="image/webp" />}
-          <img className="project-banner__image" src={project.cover.png} alt={project.alt} />
+          {banner.webp && <source srcSet={banner.webp} type="image/webp" />}
+          <img className="project-banner__image" src={banner.png} alt={banner.alt} />
         </picture>
         <div className="project-banner__overlay" />
         <div className="container-80 project-banner__content">

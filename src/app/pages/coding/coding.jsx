@@ -65,7 +65,7 @@ const Coding = () => {
     <>
       <header className="container-80 title-wrapper">
         <h1 className="title title--center title--projects">Coding</h1>
-        <small className="title__subtitle">Side projects & experiments</small>
+        <small className="title__subtitle">Projects</small>
       </header>
 
       <nav className="navbar-filter" aria-label="Project Categories">

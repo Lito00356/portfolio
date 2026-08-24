@@ -25,6 +25,9 @@ const About = () => {
           development feels quite natural. I still get to use the technical skills I built over the years, while also
           bringing my creative background into the mix to build engaging digital experiences.
         </p>
+        <a className="button about__resume" href="/cv/Tomasz-Liksza-CV.pdf" download>
+          Resume
+        </a>
       </div>
     </section>
   );
