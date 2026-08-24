@@ -56,10 +56,18 @@ const CodingDetail = () => {
 
         {images.length > 1 && (
           <>
-            <button className="ps1-btn project-carousel__btn project-carousel__btn--left" onClick={goPrev} aria-label="Vorige screenshot">
+            <button
+              className="ps1-btn project-carousel__btn project-carousel__btn--left"
+              onClick={goPrev}
+              aria-label="Vorige screenshot"
+            >
               <span className="ps1-arrow" />
             </button>
-            <button className="ps1-btn project-carousel__btn project-carousel__btn--right" onClick={goNext} aria-label="Volgende screenshot">
+            <button
+              className="ps1-btn project-carousel__btn project-carousel__btn--right"
+              onClick={goNext}
+              aria-label="Volgende screenshot"
+            >
               <span className="ps1-arrow ps1-arrow--right" />
             </button>
 
@@ -67,9 +75,7 @@ const CodingDetail = () => {
               {images.map((_, i) => (
                 <button
                   key={i}
-                  className={
-                    i === index ? "project-carousel__dot project-carousel__dot--active" : "project-carousel__dot"
-                  }
+                  className={i === index ? "project-carousel__dot project-carousel__dot--active" : "project-carousel__dot"}
                   onClick={() => setIndex(i)}
                   aria-label={`Ga naar screenshot ${i + 1}`}
                 />
