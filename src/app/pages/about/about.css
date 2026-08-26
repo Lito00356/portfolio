@@ -60,3 +60,52 @@
     align-self: center;
   }
 }
+
+/* ── Skills / technology badges ──────────────────────── */
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4xl);
+  padding-bottom: var(--spacing-6xl);
+}
+
+.about-skills__title {
+  font-size: var(--text-size-2xl);
+  margin: 0 0 var(--spacing-lg);
+}
+
+.about-skills__badges {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.about-skills__badge {
+  font-size: var(--text-size-sm);
+  color: var(--main-color-light);
+  border: 1px solid var(--main-color-muted);
+  border-radius: var(--radius-2xs);
+  padding: var(--spacing-2xs) var(--spacing-sm);
+}
+
+.about-skills__badge--lang {
+  font-size: var(--text-size-lg);
+  font-weight: 700;
+  color: var(--text-white);
+  border: 2px solid var(--main-color);
+  padding: var(--spacing-xs) var(--spacing-lg);
+}
+
+@media (max-width: 48rem) {
+  .about-skills {
+    text-align: center;
+  }
+
+  .about-skills__badges {
+    justify-content: center;
+  }
+}
