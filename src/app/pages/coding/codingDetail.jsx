@@ -41,6 +41,7 @@ const CodingDetail = () => {
 
       <section className="container-80 project-detail__body">
         <p className="project-detail__description">{project.description}</p>
+        {project.info && <small className="project-detail__info">{project?.info}</small>}
 
         {project.technologies?.length > 0 && (
           <ul className="project-detail__tech">
