@@ -1,4 +1,4 @@
-import { FRAMEWORKS, LANGUAGES, VFX_SKILLS } from "@lib/lists";
+import { DATABASES, FRAMEWORKS, LANGUAGES, VFX_SKILLS } from "@lib/lists";
 import "./about.css";
 
 const About = () => {
@@ -36,30 +36,52 @@ const About = () => {
       <section className="container-80 about-skills">
         <div className="about-skills__group">
           <small>Familiar with</small>
-          <h2 className="about-skills__title">Programming</h2>
-          <ul className="about-skills__badges">
-            {LANGUAGES.map((tech) => (
-              <li key={tech} className="about-skills__badge about-skills__badge--lang">
-                {tech}
-              </li>
-            ))}
-            {FRAMEWORKS.map((tech) => (
-              <li key={tech} className="about-skills__badge">
-                {tech}
-              </li>
-            ))}
-          </ul>
+
+          <div className="about-skills__subgroup">
+            <h2 className="about-skills__title">Programming Languages</h2>
+            <ul className="about-skills__badges">
+              {LANGUAGES.map((tech) => (
+                <li key={tech} className="about-skills__badge">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="about-skills__subgroup">
+            <h2 className="about-skills__title">Frameworks</h2>
+            <ul className="about-skills__badges">
+              {FRAMEWORKS.map((tech) => (
+                <li key={tech} className="about-skills__badge">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="about-skills__subgroup">
+            <h2 className="about-skills__title">Databases</h2>
+            <ul className="about-skills__badges">
+              {DATABASES.map((tech) => (
+                <li key={tech} className="about-skills__badge">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="about-skills__group">
-          <h2 className="about-skills__title">VFX</h2>
-          <ul className="about-skills__badges">
-            {VFX_SKILLS.map((tech) => (
-              <li key={tech} className="about-skills__badge about-skills__badge--lang">
-                {tech}
-              </li>
-            ))}
-          </ul>
+          <div className="about-skills__subgroup">
+            <h2 className="about-skills__title">VFX-software</h2>
+            <ul className="about-skills__badges">
+              {VFX_SKILLS.map((tech) => (
+                <li key={tech} className="about-skills__badge">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </>
