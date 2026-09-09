@@ -13,10 +13,8 @@ export const FRAMEWORKS = [
   "Figma",
   "Laravel",
   "CraftCMS",
-  "PostgreSQL",
-  "SQLite",
-  "Supabase",
-  "Strapi",
 ];
+
+export const DATABASES = ["PostgreSQL", "SQLite", "Supabase", "Strapi", "Prisma"];
 
 export const VFX_SKILLS = ["Nuke", "Photoshop", "Blender", "Maya", "Mocha"];
