@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router";
+import { useReveal } from "@lib/useReveal";
 import { DATABASES, FRAMEWORKS, LANGUAGES, VFX_SKILLS } from "@lib/lists";
 import "./about.css";
 
@@ -21,6 +22,7 @@ const JOURNEY = [
   },
 ];
 
+
 const SKILL_GROUPS = [
   { title: "Frameworks & tools", items: FRAMEWORKS, wide: true },
   { title: "Languages", items: LANGUAGES },
@@ -29,26 +31,6 @@ const SKILL_GROUPS = [
 ];
 
 const ALL_SKILLS = [...LANGUAGES, ...FRAMEWORKS, ...DATABASES, ...VFX_SKILLS];
-
-/* Fades elements with [data-reveal] in as they scroll into view */
-const useReveal = (rootRef) => {
-  useEffect(() => {
-    const nodes = rootRef.current?.querySelectorAll("[data-reveal]") ?? [];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 },
-    );
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, [rootRef]);
-};
 
 /* Before/after slider, like comparing a plate and a comp in VFX */
 const CompareFrame = () => {
