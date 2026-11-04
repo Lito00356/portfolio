@@ -59,14 +59,14 @@
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background-color: rgba(245, 245, 245, 0.08);
+  background-color: rgb(var(--color-white-rgb) / 0.08);
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
 }
 
 .contact__social-link:hover {
-  background-color: rgba(245, 245, 245, 0.16);
+  background-color: rgb(var(--color-white-rgb) / 0.16);
   transform: translateY(-2px);
 }
 
@@ -98,8 +98,8 @@
 .contact__field textarea {
   font: inherit;
   color: var(--text-white);
-  background-color: rgba(245, 245, 245, 0.06);
-  border: 1px solid rgba(245, 245, 245, 0.2);
+  background-color: rgb(var(--color-white-rgb) / 0.06);
+  border: 1px solid rgb(var(--color-white-rgb) / 0.2);
   border-radius: var(--radius-sm);
   padding: var(--spacing-sm) var(--spacing-base);
   resize: none;
@@ -112,7 +112,7 @@
 .contact__field textarea:focus {
   outline: none;
   border-color: var(--main-color);
-  background-color: rgba(245, 245, 245, 0.1);
+  background-color: rgb(var(--color-white-rgb) / 0.1);
 }
 
 .contact__field small {

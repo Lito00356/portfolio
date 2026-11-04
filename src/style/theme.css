@@ -1,12 +1,12 @@
 :root {
   /* text color: */
-  --text-black: rgba(17, 18, 18, 1);
-  --text-muted: rgb(101, 105, 105);
-  --text-white: rgb(245, 245, 245);
-  --text-hover-accent-light: rgb(198, 212, 210);
-  --text-hover-accent-contrast: rgb(238, 238, 238);
-  --text-hover-accent-muted: rgb(163, 175, 173);
-  --text-hover-accent-dark: rgba(216, 230, 227, 0.171);
+  --text-black: #0c1a17;
+  --text-muted: #7f938c;
+  --text-white: #eef7f3;
+  --text-hover-accent-light: #c9ebdf;
+  --text-hover-accent-contrast: #f4fbf8;
+  --text-hover-accent-muted: #8fb3a7;
+  --text-hover-accent-dark: rgb(79 203 159 / 0.17);
 
   /* text sizes: */
   --text-size-xs: 0.6875rem;
@@ -45,19 +45,34 @@
   /* layout: */
   --page-gutter: clamp(1.5rem, 7.5vw, 8rem);
 
-  /* colors: */
-  --color-black: #090109;
-  --color-white: #edfafe;
+  /* colors: palette — dark green, coral, teal, mint */
+  --color-black: #0c1a17;
+  --color-black-rgb: 12 26 23;
+  --color-white: #eef7f3;
+  --color-white-rgb: 238 247 243;
+  --color-surface: #12241f; /* slightly lighter than the background: panels, cards */
 
-  --accent: hsl(302, 89%, 44%);
-  --accent-muted: hsla(302, 76%, 48%, 0.493);
-  --accent-light: hsl(302, 76%, 65%);
+  --coral: #fb7652;
+  --teal: #2b6e69;
+  --mint: #4fcb9f;
 
-  --accent-secondary: hsl(101, 94%, 25%);
-  --accent-secondary-muted: hsla(101, 81%, 31%, 0.493);
-  --accent-secondary-light: hsl(101, 81%, 45%);
+  /* primary accent: coral */
+  --accent: var(--coral);
+  --accent-muted: rgb(251 118 82 / 0.5);
+  --accent-light: #ff9b7f;
+
+  /* secondary accent: mint */
+  --accent-secondary: var(--mint);
+  --accent-secondary-muted: rgb(79 203 159 / 0.5);
+  --accent-secondary-light: #82dcbc;
+
+  /* tertiary accent: teal */
+  --accent-tertiary: var(--teal);
+  --accent-tertiary-muted: rgb(43 110 105 / 0.5);
+  --accent-tertiary-light: #3f8f88;
 
   --background: var(--color-black);
+  --background-home: rgb(2, 2, 2); /* home: near black, so the screens fade into the dark */
   --dark: var(--color-black);
   --shadow: var(--accent-muted);
 

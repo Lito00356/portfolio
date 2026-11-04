@@ -1,4 +1,4 @@
-export const PUBLIC = ""; // of een base URL indien nodig
+export const PUBLIC = ""; // or a base URL if needed
 
 export const MODELS = {
   player: "/models/player_animated_01.gltf",
