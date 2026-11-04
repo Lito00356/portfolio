@@ -43,21 +43,19 @@
   display: inline-block;
 }
 
+/* Highlight block: offset by default, snaps exactly behind the text on hover */
 .title__subtitle::before {
   content: "";
   position: absolute;
-  background-color: var(--main-color);
-  width: 110%;
-  height: 100%;
-  bottom: 0.25rem;
-  right: 0.2rem;
+  inset: 0;
   z-index: -1;
-  transition: all 0.2s ease;
+  background-color: var(--main-color);
+  transform: translate(-0.4rem, -0.25rem);
+  transition: transform 0.3s var(--ease-smooth);
 }
 
 .title__subtitle:hover::before {
-  bottom: 0;
-  right: -0.5rem;
+  transform: translate(0, 0);
 }
 
 /* ── Filter nav ───────────────────────────────────────── */
