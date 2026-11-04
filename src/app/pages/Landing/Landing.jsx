@@ -39,7 +39,7 @@ const Landing = () => {
   }, [activePage.key]);
 
   return (
-    <>
+    <main className="landing">
       <Canvas className="carousel-canvas">
         <Camera />
         <spotLight intensity={1} />
@@ -62,7 +62,7 @@ const Landing = () => {
           <small className="landing__tagline">Understand. Build. Improve.</small>
         </div>
       </div>
-    </>
+    </main>
   );
 };
 

@@ -1,3 +1,11 @@
+.landing {
+  position: relative;
+  height: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  background-color: var(--background-home);
+}
+
 .carousel-canvas {
   position: absolute;
   inset: 0;
