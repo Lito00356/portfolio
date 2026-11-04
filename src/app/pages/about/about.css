@@ -1,6 +1,6 @@
 /* ── Page ─────────────────────────────────────────────── */
 .about-page {
-  padding-bottom: var(--spacing-8xl);
+  padding-bottom: var(--spacing-3xl);
 }
 
 /* ── Hero ─────────────────────────────────────────────── */
@@ -381,7 +381,7 @@
 /* ── Skills bento ─────────────────────────────────────── */
 .bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -421,7 +421,9 @@
 }
 
 .bento__title {
+  min-width: 0;
   margin: 0;
+  overflow-wrap: anywhere;
   font-size: var(--text-size-xl);
   font-weight: 700;
 }
@@ -498,18 +500,26 @@
   }
 
   .bento {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 42rem) {
   .bento {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bento__card {
+    padding: var(--spacing-xl);
   }
 
   .bento__card--wide {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .bento__card--wide .bento__title {
+    font-size: var(--text-size-2xl);
   }
 }
 

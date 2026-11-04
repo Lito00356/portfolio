@@ -2,7 +2,7 @@
 .contact-page {
   --error: #f47174;
 
-  padding-bottom: var(--spacing-8xl);
+  padding-bottom: var(--spacing-3xl);
 }
 
 /* ── Hero ─────────────────────────────────────────────── */
