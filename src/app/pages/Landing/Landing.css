@@ -41,6 +41,8 @@
   justify-content: space-between;
   gap: var(--spacing-xl);
   padding: 0 3.8rem;
+  /* Text only: let clicks/taps pass through to the floppy disks underneath */
+  pointer-events: none;
 }
 
 .landing__meta {
