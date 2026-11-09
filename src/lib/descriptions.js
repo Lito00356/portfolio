@@ -95,6 +95,20 @@ export const CODING_PROJECTS = [
       "AsyncStorage",
     ],
   },
+  {
+    id: 6,
+    slug: "applicant",
+    title: "Applicant",
+    type: "Web App",
+    description:
+      "A job application tracker built to practise Next.js and TypeScript while keeping a clear overview of the applications I've submitted. It runs locally on a Raspberry Pi, making it accessible from all my devices at home. I also set up a Tailscale connection, allowing me to access it from anywhere and add new companies on the go.",
+    info: "Companies and details shown are mock data for privacy reasons",
+    todo: "Planned: a cron job that scans job listing websites and shows a list of potential matches for what I'm looking for.",
+    cover: "/images/thumbnails/applicant.jpg",
+    alt: "Applicant job application overview",
+    images: buildImages("applicant", 5, "Applicant"),
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Knex", "SQLite", "Zod", "bcrypt", "Sonner"],
+  },
 ];
 
 export const VFX_PROJECTS = [
