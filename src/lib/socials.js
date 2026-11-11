@@ -1,7 +1,7 @@
 // TODO: replace "#" with the real IMDb profile URL
 export const SOCIALS = [
   { id: "github", label: "GitHub", href: "https://github.com/Lito00356?tab=repositories" },
-  { id: "linkedin", label: "LinkedIn", href: "www.linkedin.com/in/tomaszli" },
+  { id: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/tomaszli" },
   {
     id: "imdb",
     label: "IMDb",
