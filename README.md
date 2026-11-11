@@ -1,18 +1,13 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio website, built with **React** and **React Three Fiber (R3F)**. It brings my projects, background and contact details together in one interactive 3D web experience.
 
-Currently, two official plugins are available:
+**Live:** https://portfolio-42k3.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech stack
 
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://react.dev/) for the UI and routing (React Router)
+- [React Three Fiber](https://r3f.docs.pmnd.rs/) and [Three.js](https://threejs.org/) for the 3D scenes
+- [Drei](https://drei.docs.pmnd.rs/) and [@react-three/postprocessing](https://react-postprocessing.docs.pmnd.rs/) for 3D helpers and visual effects
+- [EmailJS](https://www.emailjs.com/) and React Hook Form for the contact form
+- [Vite](https://vite.dev/) as the build tool
